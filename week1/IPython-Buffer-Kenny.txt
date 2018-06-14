@@ -1,0 +1,3180 @@
+
+Author: Kenny Ballou
+Email: kballou@devnulllabs.io
+
+In [1]: import math
+
+In [9]: import numpy as np
+
+In [10]: from datetime import timedelta
+
+In [11]: np.linspace(0,1, 100)
+Out[13]: 
+array([0.        , 0.01010101, 0.02020202, 0.03030303, 0.04040404,
+       0.05050505, 0.06060606, 0.07070707, 0.08080808, 0.09090909,
+       0.1010101 , 0.11111111, 0.12121212, 0.13131313, 0.14141414,
+       0.15151515, 0.16161616, 0.17171717, 0.18181818, 0.19191919,
+       0.2020202 , 0.21212121, 0.22222222, 0.23232323, 0.24242424,
+       0.25252525, 0.26262626, 0.27272727, 0.28282828, 0.29292929,
+       0.3030303 , 0.31313131, 0.32323232, 0.33333333, 0.34343434,
+       0.35353535, 0.36363636, 0.37373737, 0.38383838, 0.39393939,
+       0.4040404 , 0.41414141, 0.42424242, 0.43434343, 0.44444444,
+       0.45454545, 0.46464646, 0.47474747, 0.48484848, 0.49494949,
+       0.50505051, 0.51515152, 0.52525253, 0.53535354, 0.54545455,
+       0.55555556, 0.56565657, 0.57575758, 0.58585859, 0.5959596 ,
+       0.60606061, 0.61616162, 0.62626263, 0.63636364, 0.64646465,
+       0.65656566, 0.66666667, 0.67676768, 0.68686869, 0.6969697 ,
+       0.70707071, 0.71717172, 0.72727273, 0.73737374, 0.74747475,
+       0.75757576, 0.76767677, 0.77777778, 0.78787879, 0.7979798 ,
+       0.80808081, 0.81818182, 0.82828283, 0.83838384, 0.84848485,
+       0.85858586, 0.86868687, 0.87878788, 0.88888889, 0.8989899 ,
+       0.90909091, 0.91919192, 0.92929293, 0.93939394, 0.94949495,
+       0.95959596, 0.96969697, 0.97979798, 0.98989899, 1.        ])
+
+In [14]: from numpy import linspace
+
+In [15]: linspace(0, 1, 100)
+Out[21]: 
+array([0.        , 0.01010101, 0.02020202, 0.03030303, 0.04040404,
+       0.05050505, 0.06060606, 0.07070707, 0.08080808, 0.09090909,
+       0.1010101 , 0.11111111, 0.12121212, 0.13131313, 0.14141414,
+       0.15151515, 0.16161616, 0.17171717, 0.18181818, 0.19191919,
+       0.2020202 , 0.21212121, 0.22222222, 0.23232323, 0.24242424,
+       0.25252525, 0.26262626, 0.27272727, 0.28282828, 0.29292929,
+       0.3030303 , 0.31313131, 0.32323232, 0.33333333, 0.34343434,
+       0.35353535, 0.36363636, 0.37373737, 0.38383838, 0.39393939,
+       0.4040404 , 0.41414141, 0.42424242, 0.43434343, 0.44444444,
+       0.45454545, 0.46464646, 0.47474747, 0.48484848, 0.49494949,
+       0.50505051, 0.51515152, 0.52525253, 0.53535354, 0.54545455,
+       0.55555556, 0.56565657, 0.57575758, 0.58585859, 0.5959596 ,
+       0.60606061, 0.61616162, 0.62626263, 0.63636364, 0.64646465,
+       0.65656566, 0.66666667, 0.67676768, 0.68686869, 0.6969697 ,
+       0.70707071, 0.71717172, 0.72727273, 0.73737374, 0.74747475,
+       0.75757576, 0.76767677, 0.77777778, 0.78787879, 0.7979798 ,
+       0.80808081, 0.81818182, 0.82828283, 0.83838384, 0.84848485,
+       0.85858586, 0.86868687, 0.87878788, 0.88888889, 0.8989899 ,
+       0.90909091, 0.91919192, 0.92929293, 0.93939394, 0.94949495,
+       0.95959596, 0.96969697, 0.97979798, 0.98989899, 1.        ])
+
+In [22]: for x in range(0, 10):
+    ...:    print(x)
+    ...: 
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+In [23]: def factorial(n):
+    ...:    '''compute the factorial of `n`'''
+    ...:    if n <= 0:
+    ...:        return 1
+    ...:    else:
+    ...:        return n * factorial(n-1)
+    ...: 
+  File "<ipython-input-23-4b5c3cc68a42>", line 8
+    else:
+    ^
+IndentationError: unexpected indent
+
+
+In [24]: def factorial(n):
+    ...:    '''compute the factorial of `n`'''
+    ...:    if n <= 0:
+    ...:        return 1
+    ...:    else:
+    ...:        return n * factorial(n-1)
+    ...: 
+
+In [25]: factorial(5)
+Out[25]: 120
+
+
+In [28]: def factorial_itr(n):
+    ...:     result = 1
+    ...:     for x in range(1, n+1):
+    ...:         result = result * x
+    ...:     return result
+    ...: 
+
+In [29]: factorial_itr(5)
+Out[30]: 120
+
+In [31]: class SpamEggs(object):
+    ...:    pass
+    ...: 
+
+In [35]: spam_and_eggs = SpamEggs()
+
+In [39]: class Spam(object):
+    ...:    def __init__(self):
+    ...:        pass
+    ...:    def __call__(self):
+    ...:        print('hello, world!')
+hello, world!
+
+In [60]: class Spam(object):
+    ...:     def __call__(self):
+    ...:         print('hello, world!')
+    ...: 
+
+In [61]: spam = Spam()
+
+In [63]: spam()
+hello, world!
+
+In [64]: type(spam)
+Out[64]: __main__.Spam
+
+In [65]: type(Spam)
+Out[65]: type
+
+In [66]: type(object)
+Out[66]: type
+
+In [69]: import math  C-c C-c
+KeyboardInterrupt escaped interact()
+
+In [75]: help(np)
+
+In [76]: 
+In [76]: np.__getattribute__('__doc__')
+Out[87]: '\nNumPy\n=====\n\nProvides\n  1. An array object of arbitrary homogeneous items\n  2. Fast mathematical operations over arrays\n  3. Linear Algebra, Fourier Transforms, Random Number Generation\n\nHow to use the documentation\n----------------------------\nDocumentation is available in two forms: docstrings provided\nwith the code, and a loose standing reference guide, available from\n`the NumPy homepage <http://www.scipy.org>`_.\n\nWe recommend exploring the docstrings using\n`IPython <http://ipython.scipy.org>`_, an advanced Python shell with\nTAB-completion and introspection capabilities.  See below for further\ninstructions.\n\nThe docstring examples assume that `numpy` has been imported as `np`::\n\n  >>> import numpy as np\n\nCode snippets are indicated by three greater-than signs::\n\n  >>> x = 42\n  >>> x = x + 1\n\nUse the built-in ``help`` function to view a function\'s docstring::\n\n  >>> help(np.sort)\n  ... # doctest: +SKIP\n\nFor some objects, ``np.info(obj)`` may provide additional help.  This is\nparticularly true if you see the line "Help on ufunc object:" at the top\nof the help() page.  Ufuncs are implemented in C, not Python, for speed.\nThe native Python help() does not know how to view their help, but our\nnp.info() function does.\n\nTo search for documents containing a keyword, do::\n\n  >>> np.lookfor(\'keyword\')\n  ... # doctest: +SKIP\n\nGeneral-purpose documents like a glossary and help on the basic concepts\nof numpy are available under the ``doc`` sub-module::\n\n  >>> from numpy import doc\n  >>> help(doc)\n  ... # doctest: +SKIP\n\nAvailable subpackages\n---------------------\ndoc\n    Topical documentation on broadcasting, indexing, etc.\nlib\n    Basic functions used by several sub-packages.\nrandom\n    Core Random Tools\nlinalg\n    Core Linear Algebra Tools\nfft\n    Core FFT routines\npolynomial\n    Polynomial tools\ntesting\n    NumPy testing tools\nf2py\n    Fortran to Python Interface Generator.\ndistutils\n    Enhancements to distutils with support for\n    Fortran compilers support and more.\n\nUtilities\n---------\ntest\n    Run numpy unittests\nshow_config\n    Show numpy build configuration\ndual\n    Overwrite certain functions with high-performance Scipy tools\nmatlib\n    Make everything matrices.\n__version__\n    NumPy version string\n\nViewing documentation using IPython\n-----------------------------------\nStart IPython with the NumPy profile (``ipython -p numpy``), which will\nimport `numpy` under the alias `np`.  Then, use the ``cpaste`` command to\npaste examples into the shell.  To see which functions are available in\n`numpy`, type ``np.<TAB>`` (where ``<TAB>`` refers to the TAB key), or use\n``np.*cos*?<ENTER>`` (where ``<ENTER>`` refers to the ENTER key) to narrow\ndown the list.  To view the docstring for a function, use\n``np.cos?<ENTER>`` (to view the docstring) and ``np.cos??<ENTER>`` (to view\nthe source code).\n\nCopies vs. in-place operation\n-----------------------------\nMost of the functions in `numpy` return a copy of the array argument\n(e.g., `np.sort`).  In-place versions of these functions are often\navailable as array methods, i.e. ``x = np.array([1,2,3]); x.sort()``.\nExceptions to this rule are documented.\n\n'
+
+In [88]: np.__getattribute__('__doc__').__repr__()
+Out[103]: '\'\\nNumPy\\n=====\\n\\nProvides\\n  1. An array object of arbitrary homogeneous items\\n  2. Fast mathematical operations over arrays\\n  3. Linear Algebra, Fourier Transforms, Random Number Generation\\n\\nHow to use the documentation\\n----------------------------\\nDocumentation is available in two forms: docstrings provided\\nwith the code, and a loose standing reference guide, available from\\n`the NumPy homepage <http://www.scipy.org>`_.\\n\\nWe recommend exploring the docstrings using\\n`IPython <http://ipython.scipy.org>`_, an advanced Python shell with\\nTAB-completion and introspection capabilities.  See below for further\\ninstructions.\\n\\nThe docstring examples assume that `numpy` has been imported as `np`::\\n\\n  >>> import numpy as np\\n\\nCode snippets are indicated by three greater-than signs::\\n\\n  >>> x = 42\\n  >>> x = x + 1\\n\\nUse the built-in ``help`` function to view a function\\\'s docstring::\\n\\n  >>> help(np.sort)\\n  ... # doctest: +SKIP\\n\\nFor some objects, ``np.info(obj)`` may provide additional help.  This is\\nparticularly true if you see the line "Help on ufunc object:" at the top\\nof the help() page.  Ufuncs are implemented in C, not Python, for speed.\\nThe native Python help() does not know how to view their help, but our\\nnp.info() function does.\\n\\nTo search for documents containing a keyword, do::\\n\\n  >>> np.lookfor(\\\'keyword\\\')\\n  ... # doctest: +SKIP\\n\\nGeneral-purpose documents like a glossary and help on the basic concepts\\nof numpy are available under the ``doc`` sub-module::\\n\\n  >>> from numpy import doc\\n  >>> help(doc)\\n  ... # doctest: +SKIP\\n\\nAvailable subpackages\\n---------------------\\ndoc\\n    Topical documentation on broadcasting, indexing, etc.\\nlib\\n    Basic functions used by several sub-packages.\\nrandom\\n    Core Random Tools\\nlinalg\\n    Core Linear Algebra Tools\\nfft\\n    Core FFT routines\\npolynomial\\n    Polynomial tools\\ntesting\\n    NumPy testing tools\\nf2py\\n    Fortran to Python Interface Generator.\\ndistutils\\n    Enhancements to distutils with support for\\n    Fortran compilers support and more.\\n\\nUtilities\\n---------\\ntest\\n    Run numpy unittests\\nshow_config\\n    Show numpy build configuration\\ndual\\n    Overwrite certain functions with high-performance Scipy tools\\nmatlib\\n    Make everything matrices.\\n__version__\\n    NumPy version string\\n\\nViewing documentation using IPython\\n-----------------------------------\\nStart IPython with the NumPy profile (``ipython -p numpy``), which will\\nimport `numpy` under the alias `np`.  Then, use the ``cpaste`` command to\\npaste examples into the shell.  To see which functions are available in\\n`numpy`, type ``np.<TAB>`` (where ``<TAB>`` refers to the TAB key), or use\\n``np.*cos*?<ENTER>`` (where ``<ENTER>`` refers to the ENTER key) to narrow\\ndown the list.  To view the docstring for a function, use\\n``np.cos?<ENTER>`` (to view the docstring) and ``np.cos??<ENTER>`` (to view\\nthe source code).\\n\\nCopies vs. in-place operation\\n-----------------------------\\nMost of the functions in `numpy` return a copy of the array argument\\n(e.g., `np.sort`).  In-place versions of these functions are often\\navailable as array methods, i.e. ``x = np.array([1,2,3]); x.sort()``.\\nExceptions to this rule are documented.\\n\\n\''
+
+
+In [106]: hprint(np.__doc__)
+
+NumPy
+=====
+
+Provides
+  1. An array object of arbitrary homogeneous items
+  2. Fast mathematical operations over arrays
+  3. Linear Algebra, Fourier Transforms, Random Number Generation
+
+How to use the documentation
+----------------------------
+Documentation is available in two forms: docstrings provided
+with the code, and a loose standing reference guide, available from
+`the NumPy homepage <http://www.scipy.org>`_.
+
+We recommend exploring the docstrings using
+`IPython <http://ipython.scipy.org>`_, an advanced Python shell with
+TAB-completion and introspection capabilities.  See below for further
+instructions.
+
+The docstring examples assume that `numpy` has been imported as `np`::
+
+  >>> import numpy as np
+
+Code snippets are indicated by three greater-than signs::
+
+  >>> x = 42
+  >>> x = x + 1
+
+Use the built-in ``help`` function to view a function's docstring::
+
+  >>> help(np.sort)
+  ... # doctest: +SKIP
+
+For some objects, ``np.info(obj)`` may provide additional help.  This is
+particularly true if you see the line "Help on ufunc object:" at the top
+of the help() page.  Ufuncs are implemented in C, not Python, for speed.
+The native Python help() does not know how to view their help, but our
+np.info() function does.
+
+To search for documents containing a keyword, do::
+
+  >>> np.lookfor('keyword')
+  ... # doctest: +SKIP
+
+General-purpose documents like a glossary and help on the basic concepts
+of numpy are available under the ``doc`` sub-module::
+
+  >>> from numpy import doc
+  >>> help(doc)
+  ... # doctest: +SKIP
+
+Available subpackages
+---------------------
+doc
+    Topical documentation on broadcasting, indexing, etc.
+lib
+    Basic functions used by several sub-packages.
+random
+    Core Random Tools
+linalg
+    Core Linear Algebra Tools
+fft
+    Core FFT routines
+polynomial
+    Polynomial tools
+testing
+    NumPy testing tools
+f2py
+    Fortran to Python Interface Generator.
+distutils
+    Enhancements to distutils with support for
+    Fortran compilers support and more.
+
+Utilities
+---------
+test
+    Run numpy unittests
+show_config
+    Show numpy build configuration
+dual
+    Overwrite certain functions with high-performance Scipy tools
+matlib
+    Make everything matrices.
+__version__
+    NumPy version string
+
+Viewing documentation using IPython
+-----------------------------------
+Start IPython with the NumPy profile (``ipython -p numpy``), which will
+import `numpy` under the alias `np`.  Then, use the ``cpaste`` command to
+paste examples into the shell.  To see which functions are available in
+`numpy`, type ``np.<TAB>`` (where ``<TAB>`` refers to the TAB key), or use
+``np.*cos*?<ENTER>`` (where ``<ENTER>`` refers to the ENTER key) to narrow
+down the list.  To view the docstring for a function, use
+``np.cos?<ENTER>`` (to view the docstring) and ``np.cos??<ENTER>`` (to view
+the source code).
+
+Copies vs. in-place operation
+-----------------------------
+Most of the functions in `numpy` return a copy of the array argument
+(e.g., `np.sort`).  In-place versions of these functions are often
+available as array methods, i.e. ``x = np.array([1,2,3]); x.sort()``.
+Exceptions to this rule are documented.
+
+
+
+In [107]: np.__getattribute__('__doc__')
+Out[108]: '\nNumPy\n=====\n\nProvides\n  1. An array object of arbitrary homogeneous items\n  2. Fast mathematical operations over arrays\n  3. Linear Algebra, Fourier Transforms, Random Number Generation\n\nHow to use the documentation\n----------------------------\nDocumentation is available in two forms: docstrings provided\nwith the code, and a loose standing reference guide, available from\n`the NumPy homepage <http://www.scipy.org>`_.\n\nWe recommend exploring the docstrings using\n`IPython <http://ipython.scipy.org>`_, an advanced Python shell with\nTAB-completion and introspection capabilities.  See below for further\ninstructions.\n\nThe docstring examples assume that `numpy` has been imported as `np`::\n\n  >>> import numpy as np\n\nCode snippets are indicated by three greater-than signs::\n\n  >>> x = 42\n  >>> x = x + 1\n\nUse the built-in ``help`` function to view a function\'s docstring::\n\n  >>> help(np.sort)\n  ... # doctest: +SKIP\n\nFor some objects, ``np.info(obj)`` may provide additional help.  This is\nparticularly true if you see the line "Help on ufunc object:" at the top\nof the help() page.  Ufuncs are implemented in C, not Python, for speed.\nThe native Python help() does not know how to view their help, but our\nnp.info() function does.\n\nTo search for documents containing a keyword, do::\n\n  >>> np.lookfor(\'keyword\')\n  ... # doctest: +SKIP\n\nGeneral-purpose documents like a glossary and help on the basic concepts\nof numpy are available under the ``doc`` sub-module::\n\n  >>> from numpy import doc\n  >>> help(doc)\n  ... # doctest: +SKIP\n\nAvailable subpackages\n---------------------\ndoc\n    Topical documentation on broadcasting, indexing, etc.\nlib\n    Basic functions used by several sub-packages.\nrandom\n    Core Random Tools\nlinalg\n    Core Linear Algebra Tools\nfft\n    Core FFT routines\npolynomial\n    Polynomial tools\ntesting\n    NumPy testing tools\nf2py\n    Fortran to Python Interface Generator.\ndistutils\n    Enhancements to distutils with support for\n    Fortran compilers support and more.\n\nUtilities\n---------\ntest\n    Run numpy unittests\nshow_config\n    Show numpy build configuration\ndual\n    Overwrite certain functions with high-performance Scipy tools\nmatlib\n    Make everything matrices.\n__version__\n    NumPy version string\n\nViewing documentation using IPython\n-----------------------------------\nStart IPython with the NumPy profile (``ipython -p numpy``), which will\nimport `numpy` under the alias `np`.  Then, use the ``cpaste`` command to\npaste examples into the shell.  To see which functions are available in\n`numpy`, type ``np.<TAB>`` (where ``<TAB>`` refers to the TAB key), or use\n``np.*cos*?<ENTER>`` (where ``<ENTER>`` refers to the ENTER key) to narrow\ndown the list.  To view the docstring for a function, use\n``np.cos?<ENTER>`` (to view the docstring) and ``np.cos??<ENTER>`` (to view\nthe source code).\n\nCopies vs. in-place operation\n-----------------------------\nMost of the functions in `numpy` return a copy of the array argument\n(e.g., `np.sort`).  In-place versions of these functions are often\navailable as array methods, i.e. ``x = np.array([1,2,3]); x.sort()``.\nExceptions to this rule are documented.\n\n'
+
+In [109]: import sklearn.datasets
+
+In [115]: iris = sklearn.datasets.load_iris()
+
+In [119]: iris.items()
+Out[120]: 
+dict_items([('target', array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+       1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+       1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+       2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+       2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2])), ('data', array([[5.1, 3.5, 1.4, 0.2],
+       [4.9, 3. , 1.4, 0.2],
+       [4.7, 3.2, 1.3, 0.2],
+       [4.6, 3.1, 1.5, 0.2],
+       [5. , 3.6, 1.4, 0.2],
+       [5.4, 3.9, 1.7, 0.4],
+       [4.6, 3.4, 1.4, 0.3],
+       [5. , 3.4, 1.5, 0.2],
+       [4.4, 2.9, 1.4, 0.2],
+       [4.9, 3.1, 1.5, 0.1],
+       [5.4, 3.7, 1.5, 0.2],
+       [4.8, 3.4, 1.6, 0.2],
+       [4.8, 3. , 1.4, 0.1],
+       [4.3, 3. , 1.1, 0.1],
+       [5.8, 4. , 1.2, 0.2],
+       [5.7, 4.4, 1.5, 0.4],
+       [5.4, 3.9, 1.3, 0.4],
+       [5.1, 3.5, 1.4, 0.3],
+       [5.7, 3.8, 1.7, 0.3],
+       [5.1, 3.8, 1.5, 0.3],
+       [5.4, 3.4, 1.7, 0.2],
+       [5.1, 3.7, 1.5, 0.4],
+       [4.6, 3.6, 1. , 0.2],
+       [5.1, 3.3, 1.7, 0.5],
+       [4.8, 3.4, 1.9, 0.2],
+       [5. , 3. , 1.6, 0.2],
+       [5. , 3.4, 1.6, 0.4],
+       [5.2, 3.5, 1.5, 0.2],
+       [5.2, 3.4, 1.4, 0.2],
+       [4.7, 3.2, 1.6, 0.2],
+       [4.8, 3.1, 1.6, 0.2],
+       [5.4, 3.4, 1.5, 0.4],
+       [5.2, 4.1, 1.5, 0.1],
+       [5.5, 4.2, 1.4, 0.2],
+       [4.9, 3.1, 1.5, 0.1],
+       [5. , 3.2, 1.2, 0.2],
+       [5.5, 3.5, 1.3, 0.2],
+       [4.9, 3.1, 1.5, 0.1],
+       [4.4, 3. , 1.3, 0.2],
+       [5.1, 3.4, 1.5, 0.2],
+       [5. , 3.5, 1.3, 0.3],
+       [4.5, 2.3, 1.3, 0.3],
+       [4.4, 3.2, 1.3, 0.2],
+       [5. , 3.5, 1.6, 0.6],
+       [5.1, 3.8, 1.9, 0.4],
+       [4.8, 3. , 1.4, 0.3],
+       [5.1, 3.8, 1.6, 0.2],
+       [4.6, 3.2, 1.4, 0.2],
+       [5.3, 3.7, 1.5, 0.2],
+       [5. , 3.3, 1.4, 0.2],
+       [7. , 3.2, 4.7, 1.4],
+       [6.4, 3.2, 4.5, 1.5],
+       [6.9, 3.1, 4.9, 1.5],
+       [5.5, 2.3, 4. , 1.3],
+       [6.5, 2.8, 4.6, 1.5],
+       [5.7, 2.8, 4.5, 1.3],
+       [6.3, 3.3, 4.7, 1.6],
+       [4.9, 2.4, 3.3, 1. ],
+       [6.6, 2.9, 4.6, 1.3],
+       [5.2, 2.7, 3.9, 1.4],
+       [5. , 2. , 3.5, 1. ],
+       [5.9, 3. , 4.2, 1.5],
+       [6. , 2.2, 4. , 1. ],
+       [6.1, 2.9, 4.7, 1.4],
+       [5.6, 2.9, 3.6, 1.3],
+       [6.7, 3.1, 4.4, 1.4],
+       [5.6, 3. , 4.5, 1.5],
+       [5.8, 2.7, 4.1, 1. ],
+       [6.2, 2.2, 4.5, 1.5],
+       [5.6, 2.5, 3.9, 1.1],
+       [5.9, 3.2, 4.8, 1.8],
+       [6.1, 2.8, 4. , 1.3],
+       [6.3, 2.5, 4.9, 1.5],
+       [6.1, 2.8, 4.7, 1.2],
+       [6.4, 2.9, 4.3, 1.3],
+       [6.6, 3. , 4.4, 1.4],
+       [6.8, 2.8, 4.8, 1.4],
+       [6.7, 3. , 5. , 1.7],
+       [6. , 2.9, 4.5, 1.5],
+       [5.7, 2.6, 3.5, 1. ],
+       [5.5, 2.4, 3.8, 1.1],
+       [5.5, 2.4, 3.7, 1. ],
+       [5.8, 2.7, 3.9, 1.2],
+       [6. , 2.7, 5.1, 1.6],
+       [5.4, 3. , 4.5, 1.5],
+       [6. , 3.4, 4.5, 1.6],
+       [6.7, 3.1, 4.7, 1.5],
+       [6.3, 2.3, 4.4, 1.3],
+       [5.6, 3. , 4.1, 1.3],
+       [5.5, 2.5, 4. , 1.3],
+       [5.5, 2.6, 4.4, 1.2],
+       [6.1, 3. , 4.6, 1.4],
+       [5.8, 2.6, 4. , 1.2],
+       [5. , 2.3, 3.3, 1. ],
+       [5.6, 2.7, 4.2, 1.3],
+       [5.7, 3. , 4.2, 1.2],
+       [5.7, 2.9, 4.2, 1.3],
+       [6.2, 2.9, 4.3, 1.3],
+       [5.1, 2.5, 3. , 1.1],
+       [5.7, 2.8, 4.1, 1.3],
+       [6.3, 3.3, 6. , 2.5],
+       [5.8, 2.7, 5.1, 1.9],
+       [7.1, 3. , 5.9, 2.1],
+       [6.3, 2.9, 5.6, 1.8],
+       [6.5, 3. , 5.8, 2.2],
+       [7.6, 3. , 6.6, 2.1],
+       [4.9, 2.5, 4.5, 1.7],
+       [7.3, 2.9, 6.3, 1.8],
+       [6.7, 2.5, 5.8, 1.8],
+       [7.2, 3.6, 6.1, 2.5],
+       [6.5, 3.2, 5.1, 2. ],
+       [6.4, 2.7, 5.3, 1.9],
+       [6.8, 3. , 5.5, 2.1],
+       [5.7, 2.5, 5. , 2. ],
+       [5.8, 2.8, 5.1, 2.4],
+       [6.4, 3.2, 5.3, 2.3],
+       [6.5, 3. , 5.5, 1.8],
+       [7.7, 3.8, 6.7, 2.2],
+       [7.7, 2.6, 6.9, 2.3],
+       [6. , 2.2, 5. , 1.5],
+       [6.9, 3.2, 5.7, 2.3],
+       [5.6, 2.8, 4.9, 2. ],
+       [7.7, 2.8, 6.7, 2. ],
+       [6.3, 2.7, 4.9, 1.8],
+       [6.7, 3.3, 5.7, 2.1],
+       [7.2, 3.2, 6. , 1.8],
+       [6.2, 2.8, 4.8, 1.8],
+       [6.1, 3. , 4.9, 1.8],
+       [6.4, 2.8, 5.6, 2.1],
+       [7.2, 3. , 5.8, 1.6],
+       [7.4, 2.8, 6.1, 1.9],
+       [7.9, 3.8, 6.4, 2. ],
+       [6.4, 2.8, 5.6, 2.2],
+       [6.3, 2.8, 5.1, 1.5],
+       [6.1, 2.6, 5.6, 1.4],
+       [7.7, 3. , 6.1, 2.3],
+       [6.3, 3.4, 5.6, 2.4],
+       [6.4, 3.1, 5.5, 1.8],
+       [6. , 3. , 4.8, 1.8],
+       [6.9, 3.1, 5.4, 2.1],
+       [6.7, 3.1, 5.6, 2.4],
+       [6.9, 3.1, 5.1, 2.3],
+       [5.8, 2.7, 5.1, 1.9],
+       [6.8, 3.2, 5.9, 2.3],
+       [6.7, 3.3, 5.7, 2.5],
+       [6.7, 3. , 5.2, 2.3],
+       [6.3, 2.5, 5. , 1.9],
+       [6.5, 3. , 5.2, 2. ],
+       [6.2, 3.4, 5.4, 2.3],
+       [5.9, 3. , 5.1, 1.8]])), ('feature_names', ['sepal length (cm)', 'sepal width (cm)', 'petal length (cm)', 'petal width (cm)']), ('target_names', array(['setosa', 'versicolor', 'virginica'], dtype='<U10')), ('DESCR', 'Iris Plants Database\n====================\n\nNotes\n-----\nData Set Characteristics:\n    :Number of Instances: 150 (50 in each of three classes)\n    :Number of Attributes: 4 numeric, predictive attributes and the class\n    :Attribute Information:\n        - sepal length in cm\n        - sepal width in cm\n        - petal length in cm\n        - petal width in cm\n        - class:\n                - Iris-Setosa\n                - Iris-Versicolour\n                - Iris-Virginica\n    :Summary Statistics:\n\n    ============== ==== ==== ======= ===== ====================\n                    Min  Max   Mean    SD   Class Correlation\n    ============== ==== ==== ======= ===== ====================\n    sepal length:   4.3  7.9   5.84   0.83    0.7826\n    sepal width:    2.0  4.4   3.05   0.43   -0.4194\n    petal length:   1.0  6.9   3.76   1.76    0.9490  (high!)\n    petal width:    0.1  2.5   1.20  0.76     0.9565  (high!)\n    ============== ==== ==== ======= ===== ====================\n\n    :Missing Attribute Values: None\n    :Class Distribution: 33.3% for each of 3 classes.\n    :Creator: R.A. Fisher\n    :Donor: Michael Marshall (MARSHALL%PLU@io.arc.nasa.gov)\n    :Date: July, 1988\n\nThis is a copy of UCI ML iris datasets.\nhttp://archive.ics.uci.edu/ml/datasets/Iris\n\nThe famous Iris database, first used by Sir R.A Fisher\n\nThis is perhaps the best known database to be found in the\npattern recognition literature.  Fisher\'s paper is a classic in the field and\nis referenced frequently to this day.  (See Duda & Hart, for example.)  The\ndata set contains 3 classes of 50 instances each, where each class refers to a\ntype of iris plant.  One class is linearly separable from the other 2; the\nlatter are NOT linearly separable from each other.\n\nReferences\n----------\n   - Fisher,R.A. "The use of multiple measurements in taxonomic problems"\n     Annual Eugenics, 7, Part II, 179-188 (1936); also in "Contributions to\n     Mathematical Statistics" (John Wiley, NY, 1950).\n   - Duda,R.O., & Hart,P.E. (1973) Pattern Classification and Scene Analysis.\n     (Q327.D83) John Wiley & Sons.  ISBN 0-471-22361-1.  See page 218.\n   - Dasarathy, B.V. (1980) "Nosing Around the Neighborhood: A New System\n     Structure and Classification Rule for Recognition in Partially Exposed\n     Environments".  IEEE Transactions on Pattern Analysis and Machine\n     Intelligence, Vol. PAMI-2, No. 1, 67-71.\n   - Gates, G.W. (1972) "The Reduced Nearest Neighbor Rule".  IEEE Transactions\n     on Information Theory, May 1972, 431-433.\n   - See also: 1988 MLC Proceedings, 54-64.  Cheeseman et al"s AUTOCLASS II\n     conceptual clustering system finds 3 classes in the data.\n   - Many, many more ...\n')])
+
+In [121]: iris.data
+Out[122]: 
+array([[5.1, 3.5, 1.4, 0.2],
+       [4.9, 3. , 1.4, 0.2],
+       [4.7, 3.2, 1.3, 0.2],
+       [4.6, 3.1, 1.5, 0.2],
+       [5. , 3.6, 1.4, 0.2],
+       [5.4, 3.9, 1.7, 0.4],
+       [4.6, 3.4, 1.4, 0.3],
+       [5. , 3.4, 1.5, 0.2],
+       [4.4, 2.9, 1.4, 0.2],
+       [4.9, 3.1, 1.5, 0.1],
+       [5.4, 3.7, 1.5, 0.2],
+       [4.8, 3.4, 1.6, 0.2],
+       [4.8, 3. , 1.4, 0.1],
+       [4.3, 3. , 1.1, 0.1],
+       [5.8, 4. , 1.2, 0.2],
+       [5.7, 4.4, 1.5, 0.4],
+       [5.4, 3.9, 1.3, 0.4],
+       [5.1, 3.5, 1.4, 0.3],
+       [5.7, 3.8, 1.7, 0.3],
+       [5.1, 3.8, 1.5, 0.3],
+       [5.4, 3.4, 1.7, 0.2],
+       [5.1, 3.7, 1.5, 0.4],
+       [4.6, 3.6, 1. , 0.2],
+       [5.1, 3.3, 1.7, 0.5],
+       [4.8, 3.4, 1.9, 0.2],
+       [5. , 3. , 1.6, 0.2],
+       [5. , 3.4, 1.6, 0.4],
+       [5.2, 3.5, 1.5, 0.2],
+       [5.2, 3.4, 1.4, 0.2],
+       [4.7, 3.2, 1.6, 0.2],
+       [4.8, 3.1, 1.6, 0.2],
+       [5.4, 3.4, 1.5, 0.4],
+       [5.2, 4.1, 1.5, 0.1],
+       [5.5, 4.2, 1.4, 0.2],
+       [4.9, 3.1, 1.5, 0.1],
+       [5. , 3.2, 1.2, 0.2],
+       [5.5, 3.5, 1.3, 0.2],
+       [4.9, 3.1, 1.5, 0.1],
+       [4.4, 3. , 1.3, 0.2],
+       [5.1, 3.4, 1.5, 0.2],
+       [5. , 3.5, 1.3, 0.3],
+       [4.5, 2.3, 1.3, 0.3],
+       [4.4, 3.2, 1.3, 0.2],
+       [5. , 3.5, 1.6, 0.6],
+       [5.1, 3.8, 1.9, 0.4],
+       [4.8, 3. , 1.4, 0.3],
+       [5.1, 3.8, 1.6, 0.2],
+       [4.6, 3.2, 1.4, 0.2],
+       [5.3, 3.7, 1.5, 0.2],
+       [5. , 3.3, 1.4, 0.2],
+       [7. , 3.2, 4.7, 1.4],
+       [6.4, 3.2, 4.5, 1.5],
+       [6.9, 3.1, 4.9, 1.5],
+       [5.5, 2.3, 4. , 1.3],
+       [6.5, 2.8, 4.6, 1.5],
+       [5.7, 2.8, 4.5, 1.3],
+       [6.3, 3.3, 4.7, 1.6],
+       [4.9, 2.4, 3.3, 1. ],
+       [6.6, 2.9, 4.6, 1.3],
+       [5.2, 2.7, 3.9, 1.4],
+       [5. , 2. , 3.5, 1. ],
+       [5.9, 3. , 4.2, 1.5],
+       [6. , 2.2, 4. , 1. ],
+       [6.1, 2.9, 4.7, 1.4],
+       [5.6, 2.9, 3.6, 1.3],
+       [6.7, 3.1, 4.4, 1.4],
+       [5.6, 3. , 4.5, 1.5],
+       [5.8, 2.7, 4.1, 1. ],
+       [6.2, 2.2, 4.5, 1.5],
+       [5.6, 2.5, 3.9, 1.1],
+       [5.9, 3.2, 4.8, 1.8],
+       [6.1, 2.8, 4. , 1.3],
+       [6.3, 2.5, 4.9, 1.5],
+       [6.1, 2.8, 4.7, 1.2],
+       [6.4, 2.9, 4.3, 1.3],
+       [6.6, 3. , 4.4, 1.4],
+       [6.8, 2.8, 4.8, 1.4],
+       [6.7, 3. , 5. , 1.7],
+       [6. , 2.9, 4.5, 1.5],
+       [5.7, 2.6, 3.5, 1. ],
+       [5.5, 2.4, 3.8, 1.1],
+       [5.5, 2.4, 3.7, 1. ],
+       [5.8, 2.7, 3.9, 1.2],
+       [6. , 2.7, 5.1, 1.6],
+       [5.4, 3. , 4.5, 1.5],
+       [6. , 3.4, 4.5, 1.6],
+       [6.7, 3.1, 4.7, 1.5],
+       [6.3, 2.3, 4.4, 1.3],
+       [5.6, 3. , 4.1, 1.3],
+       [5.5, 2.5, 4. , 1.3],
+       [5.5, 2.6, 4.4, 1.2],
+       [6.1, 3. , 4.6, 1.4],
+       [5.8, 2.6, 4. , 1.2],
+       [5. , 2.3, 3.3, 1. ],
+       [5.6, 2.7, 4.2, 1.3],
+       [5.7, 3. , 4.2, 1.2],
+       [5.7, 2.9, 4.2, 1.3],
+       [6.2, 2.9, 4.3, 1.3],
+       [5.1, 2.5, 3. , 1.1],
+       [5.7, 2.8, 4.1, 1.3],
+       [6.3, 3.3, 6. , 2.5],
+       [5.8, 2.7, 5.1, 1.9],
+       [7.1, 3. , 5.9, 2.1],
+       [6.3, 2.9, 5.6, 1.8],
+       [6.5, 3. , 5.8, 2.2],
+       [7.6, 3. , 6.6, 2.1],
+       [4.9, 2.5, 4.5, 1.7],
+       [7.3, 2.9, 6.3, 1.8],
+       [6.7, 2.5, 5.8, 1.8],
+       [7.2, 3.6, 6.1, 2.5],
+       [6.5, 3.2, 5.1, 2. ],
+       [6.4, 2.7, 5.3, 1.9],
+       [6.8, 3. , 5.5, 2.1],
+       [5.7, 2.5, 5. , 2. ],
+       [5.8, 2.8, 5.1, 2.4],
+       [6.4, 3.2, 5.3, 2.3],
+       [6.5, 3. , 5.5, 1.8],
+       [7.7, 3.8, 6.7, 2.2],
+       [7.7, 2.6, 6.9, 2.3],
+       [6. , 2.2, 5. , 1.5],
+       [6.9, 3.2, 5.7, 2.3],
+       [5.6, 2.8, 4.9, 2. ],
+       [7.7, 2.8, 6.7, 2. ],
+       [6.3, 2.7, 4.9, 1.8],
+       [6.7, 3.3, 5.7, 2.1],
+       [7.2, 3.2, 6. , 1.8],
+       [6.2, 2.8, 4.8, 1.8],
+       [6.1, 3. , 4.9, 1.8],
+       [6.4, 2.8, 5.6, 2.1],
+       [7.2, 3. , 5.8, 1.6],
+       [7.4, 2.8, 6.1, 1.9],
+       [7.9, 3.8, 6.4, 2. ],
+       [6.4, 2.8, 5.6, 2.2],
+       [6.3, 2.8, 5.1, 1.5],
+       [6.1, 2.6, 5.6, 1.4],
+       [7.7, 3. , 6.1, 2.3],
+       [6.3, 3.4, 5.6, 2.4],
+       [6.4, 3.1, 5.5, 1.8],
+       [6. , 3. , 4.8, 1.8],
+       [6.9, 3.1, 5.4, 2.1],
+       [6.7, 3.1, 5.6, 2.4],
+       [6.9, 3.1, 5.1, 2.3],
+       [5.8, 2.7, 5.1, 1.9],
+       [6.8, 3.2, 5.9, 2.3],
+       [6.7, 3.3, 5.7, 2.5],
+       [6.7, 3. , 5.2, 2.3],
+       [6.3, 2.5, 5. , 1.9],
+       [6.5, 3. , 5.2, 2. ],
+       [6.2, 3.4, 5.4, 2.3],
+       [5.9, 3. , 5.1, 1.8]])
+
+In [123]: iris.values
+Out[124]: <function Bunch.values>
+
+
+In [126]: list(iris.values())
+Out[126]: 
+[array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+        2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+        2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]),
+ array([[5.1, 3.5, 1.4, 0.2],
+        [4.9, 3. , 1.4, 0.2],
+        [4.7, 3.2, 1.3, 0.2],
+        [4.6, 3.1, 1.5, 0.2],
+        [5. , 3.6, 1.4, 0.2],
+        [5.4, 3.9, 1.7, 0.4],
+        [4.6, 3.4, 1.4, 0.3],
+        [5. , 3.4, 1.5, 0.2],
+        [4.4, 2.9, 1.4, 0.2],
+        [4.9, 3.1, 1.5, 0.1],
+        [5.4, 3.7, 1.5, 0.2],
+        [4.8, 3.4, 1.6, 0.2],
+        [4.8, 3. , 1.4, 0.1],
+        [4.3, 3. , 1.1, 0.1],
+        [5.8, 4. , 1.2, 0.2],
+        [5.7, 4.4, 1.5, 0.4],
+        [5.4, 3.9, 1.3, 0.4],
+        [5.1, 3.5, 1.4, 0.3],
+        [5.7, 3.8, 1.7, 0.3],
+        [5.1, 3.8, 1.5, 0.3],
+        [5.4, 3.4, 1.7, 0.2],
+        [5.1, 3.7, 1.5, 0.4],
+        [4.6, 3.6, 1. , 0.2],
+        [5.1, 3.3, 1.7, 0.5],
+        [4.8, 3.4, 1.9, 0.2],
+        [5. , 3. , 1.6, 0.2],
+        [5. , 3.4, 1.6, 0.4],
+        [5.2, 3.5, 1.5, 0.2],
+        [5.2, 3.4, 1.4, 0.2],
+        [4.7, 3.2, 1.6, 0.2],
+        [4.8, 3.1, 1.6, 0.2],
+        [5.4, 3.4, 1.5, 0.4],
+        [5.2, 4.1, 1.5, 0.1],
+        [5.5, 4.2, 1.4, 0.2],
+        [4.9, 3.1, 1.5, 0.1],
+        [5. , 3.2, 1.2, 0.2],
+        [5.5, 3.5, 1.3, 0.2],
+        [4.9, 3.1, 1.5, 0.1],
+        [4.4, 3. , 1.3, 0.2],
+        [5.1, 3.4, 1.5, 0.2],
+        [5. , 3.5, 1.3, 0.3],
+        [4.5, 2.3, 1.3, 0.3],
+        [4.4, 3.2, 1.3, 0.2],
+        [5. , 3.5, 1.6, 0.6],
+        [5.1, 3.8, 1.9, 0.4],
+        [4.8, 3. , 1.4, 0.3],
+        [5.1, 3.8, 1.6, 0.2],
+        [4.6, 3.2, 1.4, 0.2],
+        [5.3, 3.7, 1.5, 0.2],
+        [5. , 3.3, 1.4, 0.2],
+        [7. , 3.2, 4.7, 1.4],
+        [6.4, 3.2, 4.5, 1.5],
+        [6.9, 3.1, 4.9, 1.5],
+        [5.5, 2.3, 4. , 1.3],
+        [6.5, 2.8, 4.6, 1.5],
+        [5.7, 2.8, 4.5, 1.3],
+        [6.3, 3.3, 4.7, 1.6],
+        [4.9, 2.4, 3.3, 1. ],
+        [6.6, 2.9, 4.6, 1.3],
+        [5.2, 2.7, 3.9, 1.4],
+        [5. , 2. , 3.5, 1. ],
+        [5.9, 3. , 4.2, 1.5],
+        [6. , 2.2, 4. , 1. ],
+        [6.1, 2.9, 4.7, 1.4],
+        [5.6, 2.9, 3.6, 1.3],
+        [6.7, 3.1, 4.4, 1.4],
+        [5.6, 3. , 4.5, 1.5],
+        [5.8, 2.7, 4.1, 1. ],
+        [6.2, 2.2, 4.5, 1.5],
+        [5.6, 2.5, 3.9, 1.1],
+        [5.9, 3.2, 4.8, 1.8],
+        [6.1, 2.8, 4. , 1.3],
+        [6.3, 2.5, 4.9, 1.5],
+        [6.1, 2.8, 4.7, 1.2],
+        [6.4, 2.9, 4.3, 1.3],
+        [6.6, 3. , 4.4, 1.4],
+        [6.8, 2.8, 4.8, 1.4],
+        [6.7, 3. , 5. , 1.7],
+        [6. , 2.9, 4.5, 1.5],
+        [5.7, 2.6, 3.5, 1. ],
+        [5.5, 2.4, 3.8, 1.1],
+        [5.5, 2.4, 3.7, 1. ],
+        [5.8, 2.7, 3.9, 1.2],
+        [6. , 2.7, 5.1, 1.6],
+        [5.4, 3. , 4.5, 1.5],
+        [6. , 3.4, 4.5, 1.6],
+        [6.7, 3.1, 4.7, 1.5],
+        [6.3, 2.3, 4.4, 1.3],
+        [5.6, 3. , 4.1, 1.3],
+        [5.5, 2.5, 4. , 1.3],
+        [5.5, 2.6, 4.4, 1.2],
+        [6.1, 3. , 4.6, 1.4],
+        [5.8, 2.6, 4. , 1.2],
+        [5. , 2.3, 3.3, 1. ],
+        [5.6, 2.7, 4.2, 1.3],
+        [5.7, 3. , 4.2, 1.2],
+        [5.7, 2.9, 4.2, 1.3],
+        [6.2, 2.9, 4.3, 1.3],
+        [5.1, 2.5, 3. , 1.1],
+        [5.7, 2.8, 4.1, 1.3],
+        [6.3, 3.3, 6. , 2.5],
+        [5.8, 2.7, 5.1, 1.9],
+        [7.1, 3. , 5.9, 2.1],
+        [6.3, 2.9, 5.6, 1.8],
+        [6.5, 3. , 5.8, 2.2],
+        [7.6, 3. , 6.6, 2.1],
+        [4.9, 2.5, 4.5, 1.7],
+        [7.3, 2.9, 6.3, 1.8],
+        [6.7, 2.5, 5.8, 1.8],
+        [7.2, 3.6, 6.1, 2.5],
+        [6.5, 3.2, 5.1, 2. ],
+        [6.4, 2.7, 5.3, 1.9],
+        [6.8, 3. , 5.5, 2.1],
+        [5.7, 2.5, 5. , 2. ],
+        [5.8, 2.8, 5.1, 2.4],
+        [6.4, 3.2, 5.3, 2.3],
+        [6.5, 3. , 5.5, 1.8],
+        [7.7, 3.8, 6.7, 2.2],
+        [7.7, 2.6, 6.9, 2.3],
+        [6. , 2.2, 5. , 1.5],
+        [6.9, 3.2, 5.7, 2.3],
+        [5.6, 2.8, 4.9, 2. ],
+        [7.7, 2.8, 6.7, 2. ],
+        [6.3, 2.7, 4.9, 1.8],
+        [6.7, 3.3, 5.7, 2.1],
+        [7.2, 3.2, 6. , 1.8],
+        [6.2, 2.8, 4.8, 1.8],
+        [6.1, 3. , 4.9, 1.8],
+        [6.4, 2.8, 5.6, 2.1],
+        [7.2, 3. , 5.8, 1.6],
+        [7.4, 2.8, 6.1, 1.9],
+        [7.9, 3.8, 6.4, 2. ],
+        [6.4, 2.8, 5.6, 2.2],
+        [6.3, 2.8, 5.1, 1.5],
+        [6.1, 2.6, 5.6, 1.4],
+        [7.7, 3. , 6.1, 2.3],
+        [6.3, 3.4, 5.6, 2.4],
+        [6.4, 3.1, 5.5, 1.8],
+        [6. , 3. , 4.8, 1.8],
+        [6.9, 3.1, 5.4, 2.1],
+        [6.7, 3.1, 5.6, 2.4],
+        [6.9, 3.1, 5.1, 2.3],
+        [5.8, 2.7, 5.1, 1.9],
+        [6.8, 3.2, 5.9, 2.3],
+        [6.7, 3.3, 5.7, 2.5],
+        [6.7, 3. , 5.2, 2.3],
+        [6.3, 2.5, 5. , 1.9],
+        [6.5, 3. , 5.2, 2. ],
+        [6.2, 3.4, 5.4, 2.3],
+        [5.9, 3. , 5.1, 1.8]]),
+ ['sepal length (cm)',
+  'sepal width (cm)',
+  'petal length (cm)',
+  'petal width (cm)'],
+ array(['setosa', 'versicolor', 'virginica'], dtype='<U10'),
+ 'Iris Plants Database\n====================\n\nNotes\n-----\nData Set Characteristics:\n    :Number of Instances: 150 (50 in each of three classes)\n    :Number of Attributes: 4 numeric, predictive attributes and the class\n    :Attribute Information:\n        - sepal length in cm\n        - sepal width in cm\n        - petal length in cm\n        - petal width in cm\n        - class:\n                - Iris-Setosa\n                - Iris-Versicolour\n                - Iris-Virginica\n    :Summary Statistics:\n\n    ============== ==== ==== ======= ===== ====================\n                    Min  Max   Mean    SD   Class Correlation\n    ============== ==== ==== ======= ===== ====================\n    sepal length:   4.3  7.9   5.84   0.83    0.7826\n    sepal width:    2.0  4.4   3.05   0.43   -0.4194\n    petal length:   1.0  6.9   3.76   1.76    0.9490  (high!)\n    petal width:    0.1  2.5   1.20  0.76     0.9565  (high!)\n    ============== ==== ==== ======= ===== ====================\n\n    :Missing Attribute Values: None\n    :Class Distribution: 33.3% for each of 3 classes.\n    :Creator: R.A. Fisher\n    :Donor: Michael Marshall (MARSHALL%PLU@io.arc.nasa.gov)\n    :Date: July, 1988\n\nThis is a copy of UCI ML iris datasets.\nhttp://archive.ics.uci.edu/ml/datasets/Iris\n\nThe famous Iris database, first used by Sir R.A Fisher\n\nThis is perhaps the best known database to be found in the\npattern recognition literature.  Fisher\'s paper is a classic in the field and\nis referenced frequently to this day.  (See Duda & Hart, for example.)  The\ndata set contains 3 classes of 50 instances each, where each class refers to a\ntype of iris plant.  One class is linearly separable from the other 2; the\nlatter are NOT linearly separable from each other.\n\nReferences\n----------\n   - Fisher,R.A. "The use of multiple measurements in taxonomic problems"\n     Annual Eugenics, 7, Part II, 179-188 (1936); also in "Contributions to\n     Mathematical Statistics" (John Wiley, NY, 1950).\n   - Duda,R.O., & Hart,P.E. (1973) Pattern Classification and Scene Analysis.\n     (Q327.D83) John Wiley & Sons.  ISBN 0-471-22361-1.  See page 218.\n   - Dasarathy, B.V. (1980) "Nosing Around the Neighborhood: A New System\n     Structure and Classification Rule for Recognition in Partially Exposed\n     Environments".  IEEE Transactions on Pattern Analysis and Machine\n     Intelligence, Vol. PAMI-2, No. 1, 67-71.\n   - Gates, G.W. (1972) "The Reduced Nearest Neighbor Rule".  IEEE Transactions\n     on Information Theory, May 1972, 431-433.\n   - See also: 1988 MLC Proceedings, 54-64.  Cheeseman et al"s AUTOCLASS II\n     conceptual clustering system finds 3 classes in the data.\n   - Many, many more ...\n']
+
+In [127]: iris.data
+Out[129]: 
+array([[5.1, 3.5, 1.4, 0.2],
+       [4.9, 3. , 1.4, 0.2],
+       [4.7, 3.2, 1.3, 0.2],
+       [4.6, 3.1, 1.5, 0.2],
+       [5. , 3.6, 1.4, 0.2],
+       [5.4, 3.9, 1.7, 0.4],
+       [4.6, 3.4, 1.4, 0.3],
+       [5. , 3.4, 1.5, 0.2],
+       [4.4, 2.9, 1.4, 0.2],
+       [4.9, 3.1, 1.5, 0.1],
+       [5.4, 3.7, 1.5, 0.2],
+       [4.8, 3.4, 1.6, 0.2],
+       [4.8, 3. , 1.4, 0.1],
+       [4.3, 3. , 1.1, 0.1],
+       [5.8, 4. , 1.2, 0.2],
+       [5.7, 4.4, 1.5, 0.4],
+       [5.4, 3.9, 1.3, 0.4],
+       [5.1, 3.5, 1.4, 0.3],
+       [5.7, 3.8, 1.7, 0.3],
+       [5.1, 3.8, 1.5, 0.3],
+       [5.4, 3.4, 1.7, 0.2],
+       [5.1, 3.7, 1.5, 0.4],
+       [4.6, 3.6, 1. , 0.2],
+       [5.1, 3.3, 1.7, 0.5],
+       [4.8, 3.4, 1.9, 0.2],
+       [5. , 3. , 1.6, 0.2],
+       [5. , 3.4, 1.6, 0.4],
+       [5.2, 3.5, 1.5, 0.2],
+       [5.2, 3.4, 1.4, 0.2],
+       [4.7, 3.2, 1.6, 0.2],
+       [4.8, 3.1, 1.6, 0.2],
+       [5.4, 3.4, 1.5, 0.4],
+       [5.2, 4.1, 1.5, 0.1],
+       [5.5, 4.2, 1.4, 0.2],
+       [4.9, 3.1, 1.5, 0.1],
+       [5. , 3.2, 1.2, 0.2],
+       [5.5, 3.5, 1.3, 0.2],
+       [4.9, 3.1, 1.5, 0.1],
+       [4.4, 3. , 1.3, 0.2],
+       [5.1, 3.4, 1.5, 0.2],
+       [5. , 3.5, 1.3, 0.3],
+       [4.5, 2.3, 1.3, 0.3],
+       [4.4, 3.2, 1.3, 0.2],
+       [5. , 3.5, 1.6, 0.6],
+       [5.1, 3.8, 1.9, 0.4],
+       [4.8, 3. , 1.4, 0.3],
+       [5.1, 3.8, 1.6, 0.2],
+       [4.6, 3.2, 1.4, 0.2],
+       [5.3, 3.7, 1.5, 0.2],
+       [5. , 3.3, 1.4, 0.2],
+       [7. , 3.2, 4.7, 1.4],
+       [6.4, 3.2, 4.5, 1.5],
+       [6.9, 3.1, 4.9, 1.5],
+       [5.5, 2.3, 4. , 1.3],
+       [6.5, 2.8, 4.6, 1.5],
+       [5.7, 2.8, 4.5, 1.3],
+       [6.3, 3.3, 4.7, 1.6],
+       [4.9, 2.4, 3.3, 1. ],
+       [6.6, 2.9, 4.6, 1.3],
+       [5.2, 2.7, 3.9, 1.4],
+       [5. , 2. , 3.5, 1. ],
+       [5.9, 3. , 4.2, 1.5],
+       [6. , 2.2, 4. , 1. ],
+       [6.1, 2.9, 4.7, 1.4],
+       [5.6, 2.9, 3.6, 1.3],
+       [6.7, 3.1, 4.4, 1.4],
+       [5.6, 3. , 4.5, 1.5],
+       [5.8, 2.7, 4.1, 1. ],
+       [6.2, 2.2, 4.5, 1.5],
+       [5.6, 2.5, 3.9, 1.1],
+       [5.9, 3.2, 4.8, 1.8],
+       [6.1, 2.8, 4. , 1.3],
+       [6.3, 2.5, 4.9, 1.5],
+       [6.1, 2.8, 4.7, 1.2],
+       [6.4, 2.9, 4.3, 1.3],
+       [6.6, 3. , 4.4, 1.4],
+       [6.8, 2.8, 4.8, 1.4],
+       [6.7, 3. , 5. , 1.7],
+       [6. , 2.9, 4.5, 1.5],
+       [5.7, 2.6, 3.5, 1. ],
+       [5.5, 2.4, 3.8, 1.1],
+       [5.5, 2.4, 3.7, 1. ],
+       [5.8, 2.7, 3.9, 1.2],
+       [6. , 2.7, 5.1, 1.6],
+       [5.4, 3. , 4.5, 1.5],
+       [6. , 3.4, 4.5, 1.6],
+       [6.7, 3.1, 4.7, 1.5],
+       [6.3, 2.3, 4.4, 1.3],
+       [5.6, 3. , 4.1, 1.3],
+       [5.5, 2.5, 4. , 1.3],
+       [5.5, 2.6, 4.4, 1.2],
+       [6.1, 3. , 4.6, 1.4],
+       [5.8, 2.6, 4. , 1.2],
+       [5. , 2.3, 3.3, 1. ],
+       [5.6, 2.7, 4.2, 1.3],
+       [5.7, 3. , 4.2, 1.2],
+       [5.7, 2.9, 4.2, 1.3],
+       [6.2, 2.9, 4.3, 1.3],
+       [5.1, 2.5, 3. , 1.1],
+       [5.7, 2.8, 4.1, 1.3],
+       [6.3, 3.3, 6. , 2.5],
+       [5.8, 2.7, 5.1, 1.9],
+       [7.1, 3. , 5.9, 2.1],
+       [6.3, 2.9, 5.6, 1.8],
+       [6.5, 3. , 5.8, 2.2],
+       [7.6, 3. , 6.6, 2.1],
+       [4.9, 2.5, 4.5, 1.7],
+       [7.3, 2.9, 6.3, 1.8],
+       [6.7, 2.5, 5.8, 1.8],
+       [7.2, 3.6, 6.1, 2.5],
+       [6.5, 3.2, 5.1, 2. ],
+       [6.4, 2.7, 5.3, 1.9],
+       [6.8, 3. , 5.5, 2.1],
+       [5.7, 2.5, 5. , 2. ],
+       [5.8, 2.8, 5.1, 2.4],
+       [6.4, 3.2, 5.3, 2.3],
+       [6.5, 3. , 5.5, 1.8],
+       [7.7, 3.8, 6.7, 2.2],
+       [7.7, 2.6, 6.9, 2.3],
+       [6. , 2.2, 5. , 1.5],
+       [6.9, 3.2, 5.7, 2.3],
+       [5.6, 2.8, 4.9, 2. ],
+       [7.7, 2.8, 6.7, 2. ],
+       [6.3, 2.7, 4.9, 1.8],
+       [6.7, 3.3, 5.7, 2.1],
+       [7.2, 3.2, 6. , 1.8],
+       [6.2, 2.8, 4.8, 1.8],
+       [6.1, 3. , 4.9, 1.8],
+       [6.4, 2.8, 5.6, 2.1],
+       [7.2, 3. , 5.8, 1.6],
+       [7.4, 2.8, 6.1, 1.9],
+       [7.9, 3.8, 6.4, 2. ],
+       [6.4, 2.8, 5.6, 2.2],
+       [6.3, 2.8, 5.1, 1.5],
+       [6.1, 2.6, 5.6, 1.4],
+       [7.7, 3. , 6.1, 2.3],
+       [6.3, 3.4, 5.6, 2.4],
+       [6.4, 3.1, 5.5, 1.8],
+       [6. , 3. , 4.8, 1.8],
+       [6.9, 3.1, 5.4, 2.1],
+       [6.7, 3.1, 5.6, 2.4],
+       [6.9, 3.1, 5.1, 2.3],
+       [5.8, 2.7, 5.1, 1.9],
+       [6.8, 3.2, 5.9, 2.3],
+       [6.7, 3.3, 5.7, 2.5],
+       [6.7, 3. , 5.2, 2.3],
+       [6.3, 2.5, 5. , 1.9],
+       [6.5, 3. , 5.2, 2. ],
+       [6.2, 3.4, 5.4, 2.3],
+       [5.9, 3. , 5.1, 1.8]])
+
+In [130]: iris.target
+Out[131]: 
+array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+       1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+       1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+       2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+       2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2])
+
+In [132]: iris.target_names
+Out[147]: array(['setosa', 'versicolor', 'virginica'], dtype='<U10')
+
+In [148]: X = iris.data
+
+In [155]: X
+Out[155]: 
+array([[5.1, 3.5, 1.4, 0.2],
+       [4.9, 3. , 1.4, 0.2],
+       [4.7, 3.2, 1.3, 0.2],
+       [4.6, 3.1, 1.5, 0.2],
+       [5. , 3.6, 1.4, 0.2],
+       [5.4, 3.9, 1.7, 0.4],
+       [4.6, 3.4, 1.4, 0.3],
+       [5. , 3.4, 1.5, 0.2],
+       [4.4, 2.9, 1.4, 0.2],
+       [4.9, 3.1, 1.5, 0.1],
+       [5.4, 3.7, 1.5, 0.2],
+       [4.8, 3.4, 1.6, 0.2],
+       [4.8, 3. , 1.4, 0.1],
+       [4.3, 3. , 1.1, 0.1],
+       [5.8, 4. , 1.2, 0.2],
+       [5.7, 4.4, 1.5, 0.4],
+       [5.4, 3.9, 1.3, 0.4],
+       [5.1, 3.5, 1.4, 0.3],
+       [5.7, 3.8, 1.7, 0.3],
+       [5.1, 3.8, 1.5, 0.3],
+       [5.4, 3.4, 1.7, 0.2],
+       [5.1, 3.7, 1.5, 0.4],
+       [4.6, 3.6, 1. , 0.2],
+       [5.1, 3.3, 1.7, 0.5],
+       [4.8, 3.4, 1.9, 0.2],
+       [5. , 3. , 1.6, 0.2],
+       [5. , 3.4, 1.6, 0.4],
+       [5.2, 3.5, 1.5, 0.2],
+       [5.2, 3.4, 1.4, 0.2],
+       [4.7, 3.2, 1.6, 0.2],
+       [4.8, 3.1, 1.6, 0.2],
+       [5.4, 3.4, 1.5, 0.4],
+       [5.2, 4.1, 1.5, 0.1],
+       [5.5, 4.2, 1.4, 0.2],
+       [4.9, 3.1, 1.5, 0.1],
+       [5. , 3.2, 1.2, 0.2],
+       [5.5, 3.5, 1.3, 0.2],
+       [4.9, 3.1, 1.5, 0.1],
+       [4.4, 3. , 1.3, 0.2],
+       [5.1, 3.4, 1.5, 0.2],
+       [5. , 3.5, 1.3, 0.3],
+       [4.5, 2.3, 1.3, 0.3],
+       [4.4, 3.2, 1.3, 0.2],
+       [5. , 3.5, 1.6, 0.6],
+       [5.1, 3.8, 1.9, 0.4],
+       [4.8, 3. , 1.4, 0.3],
+       [5.1, 3.8, 1.6, 0.2],
+       [4.6, 3.2, 1.4, 0.2],
+       [5.3, 3.7, 1.5, 0.2],
+       [5. , 3.3, 1.4, 0.2],
+       [7. , 3.2, 4.7, 1.4],
+       [6.4, 3.2, 4.5, 1.5],
+       [6.9, 3.1, 4.9, 1.5],
+       [5.5, 2.3, 4. , 1.3],
+       [6.5, 2.8, 4.6, 1.5],
+       [5.7, 2.8, 4.5, 1.3],
+       [6.3, 3.3, 4.7, 1.6],
+       [4.9, 2.4, 3.3, 1. ],
+       [6.6, 2.9, 4.6, 1.3],
+       [5.2, 2.7, 3.9, 1.4],
+       [5. , 2. , 3.5, 1. ],
+       [5.9, 3. , 4.2, 1.5],
+       [6. , 2.2, 4. , 1. ],
+       [6.1, 2.9, 4.7, 1.4],
+       [5.6, 2.9, 3.6, 1.3],
+       [6.7, 3.1, 4.4, 1.4],
+       [5.6, 3. , 4.5, 1.5],
+       [5.8, 2.7, 4.1, 1. ],
+       [6.2, 2.2, 4.5, 1.5],
+       [5.6, 2.5, 3.9, 1.1],
+       [5.9, 3.2, 4.8, 1.8],
+       [6.1, 2.8, 4. , 1.3],
+       [6.3, 2.5, 4.9, 1.5],
+       [6.1, 2.8, 4.7, 1.2],
+       [6.4, 2.9, 4.3, 1.3],
+       [6.6, 3. , 4.4, 1.4],
+       [6.8, 2.8, 4.8, 1.4],
+       [6.7, 3. , 5. , 1.7],
+       [6. , 2.9, 4.5, 1.5],
+       [5.7, 2.6, 3.5, 1. ],
+       [5.5, 2.4, 3.8, 1.1],
+       [5.5, 2.4, 3.7, 1. ],
+       [5.8, 2.7, 3.9, 1.2],
+       [6. , 2.7, 5.1, 1.6],
+       [5.4, 3. , 4.5, 1.5],
+       [6. , 3.4, 4.5, 1.6],
+       [6.7, 3.1, 4.7, 1.5],
+       [6.3, 2.3, 4.4, 1.3],
+       [5.6, 3. , 4.1, 1.3],
+       [5.5, 2.5, 4. , 1.3],
+       [5.5, 2.6, 4.4, 1.2],
+       [6.1, 3. , 4.6, 1.4],
+       [5.8, 2.6, 4. , 1.2],
+       [5. , 2.3, 3.3, 1. ],
+       [5.6, 2.7, 4.2, 1.3],
+       [5.7, 3. , 4.2, 1.2],
+       [5.7, 2.9, 4.2, 1.3],
+       [6.2, 2.9, 4.3, 1.3],
+       [5.1, 2.5, 3. , 1.1],
+       [5.7, 2.8, 4.1, 1.3],
+       [6.3, 3.3, 6. , 2.5],
+       [5.8, 2.7, 5.1, 1.9],
+       [7.1, 3. , 5.9, 2.1],
+       [6.3, 2.9, 5.6, 1.8],
+       [6.5, 3. , 5.8, 2.2],
+       [7.6, 3. , 6.6, 2.1],
+       [4.9, 2.5, 4.5, 1.7],
+       [7.3, 2.9, 6.3, 1.8],
+       [6.7, 2.5, 5.8, 1.8],
+       [7.2, 3.6, 6.1, 2.5],
+       [6.5, 3.2, 5.1, 2. ],
+       [6.4, 2.7, 5.3, 1.9],
+       [6.8, 3. , 5.5, 2.1],
+       [5.7, 2.5, 5. , 2. ],
+       [5.8, 2.8, 5.1, 2.4],
+       [6.4, 3.2, 5.3, 2.3],
+       [6.5, 3. , 5.5, 1.8],
+       [7.7, 3.8, 6.7, 2.2],
+       [7.7, 2.6, 6.9, 2.3],
+       [6. , 2.2, 5. , 1.5],
+       [6.9, 3.2, 5.7, 2.3],
+       [5.6, 2.8, 4.9, 2. ],
+       [7.7, 2.8, 6.7, 2. ],
+       [6.3, 2.7, 4.9, 1.8],
+       [6.7, 3.3, 5.7, 2.1],
+       [7.2, 3.2, 6. , 1.8],
+       [6.2, 2.8, 4.8, 1.8],
+       [6.1, 3. , 4.9, 1.8],
+       [6.4, 2.8, 5.6, 2.1],
+       [7.2, 3. , 5.8, 1.6],
+       [7.4, 2.8, 6.1, 1.9],
+       [7.9, 3.8, 6.4, 2. ],
+       [6.4, 2.8, 5.6, 2.2],
+       [6.3, 2.8, 5.1, 1.5],
+       [6.1, 2.6, 5.6, 1.4],
+       [7.7, 3. , 6.1, 2.3],
+       [6.3, 3.4, 5.6, 2.4],
+       [6.4, 3.1, 5.5, 1.8],
+       [6. , 3. , 4.8, 1.8],
+       [6.9, 3.1, 5.4, 2.1],
+       [6.7, 3.1, 5.6, 2.4],
+       [6.9, 3.1, 5.1, 2.3],
+       [5.8, 2.7, 5.1, 1.9],
+       [6.8, 3.2, 5.9, 2.3],
+       [6.7, 3.3, 5.7, 2.5],
+       [6.7, 3. , 5.2, 2.3],
+       [6.3, 2.5, 5. , 1.9],
+       [6.5, 3. , 5.2, 2. ],
+       [6.2, 3.4, 5.4, 2.3],
+       [5.9, 3. , 5.1, 1.8]])
+
+In [170]: y = iris.target
+
+In [171]: type(iris)
+Out[171]: sklearn.utils.Bunch
+
+In [172]: type(X)
+Out[172]: numpy.ndarray
+
+In [173]: type(iris.data)
+Out[174]: numpy.ndarray
+
+In [175]: import pandas as pd
+
+In [179]: pd.DataFrame(iris.data)
+Out[189]: 
+       0    1    2    3
+0    5.1  3.5  1.4  0.2
+1    4.9  3.0  1.4  0.2
+2    4.7  3.2  1.3  0.2
+3    4.6  3.1  1.5  0.2
+4    5.0  3.6  1.4  0.2
+5    5.4  3.9  1.7  0.4
+6    4.6  3.4  1.4  0.3
+7    5.0  3.4  1.5  0.2
+8    4.4  2.9  1.4  0.2
+9    4.9  3.1  1.5  0.1
+10   5.4  3.7  1.5  0.2
+11   4.8  3.4  1.6  0.2
+12   4.8  3.0  1.4  0.1
+13   4.3  3.0  1.1  0.1
+14   5.8  4.0  1.2  0.2
+15   5.7  4.4  1.5  0.4
+16   5.4  3.9  1.3  0.4
+17   5.1  3.5  1.4  0.3
+18   5.7  3.8  1.7  0.3
+19   5.1  3.8  1.5  0.3
+20   5.4  3.4  1.7  0.2
+21   5.1  3.7  1.5  0.4
+22   4.6  3.6  1.0  0.2
+23   5.1  3.3  1.7  0.5
+24   4.8  3.4  1.9  0.2
+25   5.0  3.0  1.6  0.2
+26   5.0  3.4  1.6  0.4
+27   5.2  3.5  1.5  0.2
+28   5.2  3.4  1.4  0.2
+29   4.7  3.2  1.6  0.2
+..   ...  ...  ...  ...
+120  6.9  3.2  5.7  2.3
+121  5.6  2.8  4.9  2.0
+122  7.7  2.8  6.7  2.0
+123  6.3  2.7  4.9  1.8
+124  6.7  3.3  5.7  2.1
+125  7.2  3.2  6.0  1.8
+126  6.2  2.8  4.8  1.8
+127  6.1  3.0  4.9  1.8
+128  6.4  2.8  5.6  2.1
+129  7.2  3.0  5.8  1.6
+130  7.4  2.8  6.1  1.9
+131  7.9  3.8  6.4  2.0
+132  6.4  2.8  5.6  2.2
+133  6.3  2.8  5.1  1.5
+134  6.1  2.6  5.6  1.4
+135  7.7  3.0  6.1  2.3
+136  6.3  3.4  5.6  2.4
+137  6.4  3.1  5.5  1.8
+138  6.0  3.0  4.8  1.8
+139  6.9  3.1  5.4  2.1
+140  6.7  3.1  5.6  2.4
+141  6.9  3.1  5.1  2.3
+142  5.8  2.7  5.1  1.9
+143  6.8  3.2  5.9  2.3
+144  6.7  3.3  5.7  2.5
+145  6.7  3.0  5.2  2.3
+146  6.3  2.5  5.0  1.9
+147  6.5  3.0  5.2  2.0
+148  6.2  3.4  5.4  2.3
+149  5.9  3.0  5.1  1.8
+
+[150 rows x 4 columns]
+
+
+In [202]: pd.DataFrame(list(zip(iris.data, iris.target)))
+Out[202]: 
+                        0  1
+0    [5.1, 3.5, 1.4, 0.2]  0
+1    [4.9, 3.0, 1.4, 0.2]  0
+2    [4.7, 3.2, 1.3, 0.2]  0
+3    [4.6, 3.1, 1.5, 0.2]  0
+4    [5.0, 3.6, 1.4, 0.2]  0
+5    [5.4, 3.9, 1.7, 0.4]  0
+6    [4.6, 3.4, 1.4, 0.3]  0
+7    [5.0, 3.4, 1.5, 0.2]  0
+8    [4.4, 2.9, 1.4, 0.2]  0
+9    [4.9, 3.1, 1.5, 0.1]  0
+10   [5.4, 3.7, 1.5, 0.2]  0
+11   [4.8, 3.4, 1.6, 0.2]  0
+12   [4.8, 3.0, 1.4, 0.1]  0
+13   [4.3, 3.0, 1.1, 0.1]  0
+14   [5.8, 4.0, 1.2, 0.2]  0
+15   [5.7, 4.4, 1.5, 0.4]  0
+16   [5.4, 3.9, 1.3, 0.4]  0
+17   [5.1, 3.5, 1.4, 0.3]  0
+18   [5.7, 3.8, 1.7, 0.3]  0
+19   [5.1, 3.8, 1.5, 0.3]  0
+20   [5.4, 3.4, 1.7, 0.2]  0
+21   [5.1, 3.7, 1.5, 0.4]  0
+22   [4.6, 3.6, 1.0, 0.2]  0
+23   [5.1, 3.3, 1.7, 0.5]  0
+24   [4.8, 3.4, 1.9, 0.2]  0
+25   [5.0, 3.0, 1.6, 0.2]  0
+26   [5.0, 3.4, 1.6, 0.4]  0
+27   [5.2, 3.5, 1.5, 0.2]  0
+28   [5.2, 3.4, 1.4, 0.2]  0
+29   [4.7, 3.2, 1.6, 0.2]  0
+..                    ... ..
+120  [6.9, 3.2, 5.7, 2.3]  2
+121  [5.6, 2.8, 4.9, 2.0]  2
+122  [7.7, 2.8, 6.7, 2.0]  2
+123  [6.3, 2.7, 4.9, 1.8]  2
+124  [6.7, 3.3, 5.7, 2.1]  2
+125  [7.2, 3.2, 6.0, 1.8]  2
+126  [6.2, 2.8, 4.8, 1.8]  2
+127  [6.1, 3.0, 4.9, 1.8]  2
+128  [6.4, 2.8, 5.6, 2.1]  2
+129  [7.2, 3.0, 5.8, 1.6]  2
+130  [7.4, 2.8, 6.1, 1.9]  2
+131  [7.9, 3.8, 6.4, 2.0]  2
+132  [6.4, 2.8, 5.6, 2.2]  2
+133  [6.3, 2.8, 5.1, 1.5]  2
+134  [6.1, 2.6, 5.6, 1.4]  2
+135  [7.7, 3.0, 6.1, 2.3]  2
+136  [6.3, 3.4, 5.6, 2.4]  2
+137  [6.4, 3.1, 5.5, 1.8]  2
+138  [6.0, 3.0, 4.8, 1.8]  2
+139  [6.9, 3.1, 5.4, 2.1]  2
+140  [6.7, 3.1, 5.6, 2.4]  2
+141  [6.9, 3.1, 5.1, 2.3]  2
+142  [5.8, 2.7, 5.1, 1.9]  2
+143  [6.8, 3.2, 5.9, 2.3]  2
+144  [6.7, 3.3, 5.7, 2.5]  2
+145  [6.7, 3.0, 5.2, 2.3]  2
+146  [6.3, 2.5, 5.0, 1.9]  2
+147  [6.5, 3.0, 5.2, 2.0]  2
+148  [6.2, 3.4, 5.4, 2.3]  2
+149  [5.9, 3.0, 5.1, 1.8]  2
+
+[150 rows x 2 columns]
+
+In [203]: zip(iris.data, iris.target)
+Out[206]: <zip at 0x7f9501d5e588>
+
+In [207]: for x in Out[206]:
+     ...:     print(x)
+     ...: 
+(array([5.1, 3.5, 1.4, 0.2]), 0)
+(array([4.9, 3. , 1.4, 0.2]), 0)
+(array([4.7, 3.2, 1.3, 0.2]), 0)
+(array([4.6, 3.1, 1.5, 0.2]), 0)
+(array([5. , 3.6, 1.4, 0.2]), 0)
+(array([5.4, 3.9, 1.7, 0.4]), 0)
+(array([4.6, 3.4, 1.4, 0.3]), 0)
+(array([5. , 3.4, 1.5, 0.2]), 0)
+(array([4.4, 2.9, 1.4, 0.2]), 0)
+(array([4.9, 3.1, 1.5, 0.1]), 0)
+(array([5.4, 3.7, 1.5, 0.2]), 0)
+(array([4.8, 3.4, 1.6, 0.2]), 0)
+(array([4.8, 3. , 1.4, 0.1]), 0)
+(array([4.3, 3. , 1.1, 0.1]), 0)
+(array([5.8, 4. , 1.2, 0.2]), 0)
+(array([5.7, 4.4, 1.5, 0.4]), 0)
+(array([5.4, 3.9, 1.3, 0.4]), 0)
+(array([5.1, 3.5, 1.4, 0.3]), 0)
+(array([5.7, 3.8, 1.7, 0.3]), 0)
+(array([5.1, 3.8, 1.5, 0.3]), 0)
+(array([5.4, 3.4, 1.7, 0.2]), 0)
+(array([5.1, 3.7, 1.5, 0.4]), 0)
+(array([4.6, 3.6, 1. , 0.2]), 0)
+(array([5.1, 3.3, 1.7, 0.5]), 0)
+(array([4.8, 3.4, 1.9, 0.2]), 0)
+(array([5. , 3. , 1.6, 0.2]), 0)
+(array([5. , 3.4, 1.6, 0.4]), 0)
+(array([5.2, 3.5, 1.5, 0.2]), 0)
+(array([5.2, 3.4, 1.4, 0.2]), 0)
+(array([4.7, 3.2, 1.6, 0.2]), 0)
+(array([4.8, 3.1, 1.6, 0.2]), 0)
+(array([5.4, 3.4, 1.5, 0.4]), 0)
+(array([5.2, 4.1, 1.5, 0.1]), 0)
+(array([5.5, 4.2, 1.4, 0.2]), 0)
+(array([4.9, 3.1, 1.5, 0.1]), 0)
+(array([5. , 3.2, 1.2, 0.2]), 0)
+(array([5.5, 3.5, 1.3, 0.2]), 0)
+(array([4.9, 3.1, 1.5, 0.1]), 0)
+(array([4.4, 3. , 1.3, 0.2]), 0)
+(array([5.1, 3.4, 1.5, 0.2]), 0)
+(array([5. , 3.5, 1.3, 0.3]), 0)
+(array([4.5, 2.3, 1.3, 0.3]), 0)
+(array([4.4, 3.2, 1.3, 0.2]), 0)
+(array([5. , 3.5, 1.6, 0.6]), 0)
+(array([5.1, 3.8, 1.9, 0.4]), 0)
+(array([4.8, 3. , 1.4, 0.3]), 0)
+(array([5.1, 3.8, 1.6, 0.2]), 0)
+(array([4.6, 3.2, 1.4, 0.2]), 0)
+(array([5.3, 3.7, 1.5, 0.2]), 0)
+(array([5. , 3.3, 1.4, 0.2]), 0)
+(array([7. , 3.2, 4.7, 1.4]), 1)
+(array([6.4, 3.2, 4.5, 1.5]), 1)
+(array([6.9, 3.1, 4.9, 1.5]), 1)
+(array([5.5, 2.3, 4. , 1.3]), 1)
+(array([6.5, 2.8, 4.6, 1.5]), 1)
+(array([5.7, 2.8, 4.5, 1.3]), 1)
+(array([6.3, 3.3, 4.7, 1.6]), 1)
+(array([4.9, 2.4, 3.3, 1. ]), 1)
+(array([6.6, 2.9, 4.6, 1.3]), 1)
+(array([5.2, 2.7, 3.9, 1.4]), 1)
+(array([5. , 2. , 3.5, 1. ]), 1)
+(array([5.9, 3. , 4.2, 1.5]), 1)
+(array([6. , 2.2, 4. , 1. ]), 1)
+(array([6.1, 2.9, 4.7, 1.4]), 1)
+(array([5.6, 2.9, 3.6, 1.3]), 1)
+(array([6.7, 3.1, 4.4, 1.4]), 1)
+(array([5.6, 3. , 4.5, 1.5]), 1)
+(array([5.8, 2.7, 4.1, 1. ]), 1)
+(array([6.2, 2.2, 4.5, 1.5]), 1)
+(array([5.6, 2.5, 3.9, 1.1]), 1)
+(array([5.9, 3.2, 4.8, 1.8]), 1)
+(array([6.1, 2.8, 4. , 1.3]), 1)
+(array([6.3, 2.5, 4.9, 1.5]), 1)
+(array([6.1, 2.8, 4.7, 1.2]), 1)
+(array([6.4, 2.9, 4.3, 1.3]), 1)
+(array([6.6, 3. , 4.4, 1.4]), 1)
+(array([6.8, 2.8, 4.8, 1.4]), 1)
+(array([6.7, 3. , 5. , 1.7]), 1)
+(array([6. , 2.9, 4.5, 1.5]), 1)
+(array([5.7, 2.6, 3.5, 1. ]), 1)
+(array([5.5, 2.4, 3.8, 1.1]), 1)
+(array([5.5, 2.4, 3.7, 1. ]), 1)
+(array([5.8, 2.7, 3.9, 1.2]), 1)
+(array([6. , 2.7, 5.1, 1.6]), 1)
+(array([5.4, 3. , 4.5, 1.5]), 1)
+(array([6. , 3.4, 4.5, 1.6]), 1)
+(array([6.7, 3.1, 4.7, 1.5]), 1)
+(array([6.3, 2.3, 4.4, 1.3]), 1)
+(array([5.6, 3. , 4.1, 1.3]), 1)
+(array([5.5, 2.5, 4. , 1.3]), 1)
+(array([5.5, 2.6, 4.4, 1.2]), 1)
+(array([6.1, 3. , 4.6, 1.4]), 1)
+(array([5.8, 2.6, 4. , 1.2]), 1)
+(array([5. , 2.3, 3.3, 1. ]), 1)
+(array([5.6, 2.7, 4.2, 1.3]), 1)
+(array([5.7, 3. , 4.2, 1.2]), 1)
+(array([5.7, 2.9, 4.2, 1.3]), 1)
+(array([6.2, 2.9, 4.3, 1.3]), 1)
+(array([5.1, 2.5, 3. , 1.1]), 1)
+(array([5.7, 2.8, 4.1, 1.3]), 1)
+(array([6.3, 3.3, 6. , 2.5]), 2)
+(array([5.8, 2.7, 5.1, 1.9]), 2)
+(array([7.1, 3. , 5.9, 2.1]), 2)
+(array([6.3, 2.9, 5.6, 1.8]), 2)
+(array([6.5, 3. , 5.8, 2.2]), 2)
+(array([7.6, 3. , 6.6, 2.1]), 2)
+(array([4.9, 2.5, 4.5, 1.7]), 2)
+(array([7.3, 2.9, 6.3, 1.8]), 2)
+(array([6.7, 2.5, 5.8, 1.8]), 2)
+(array([7.2, 3.6, 6.1, 2.5]), 2)
+(array([6.5, 3.2, 5.1, 2. ]), 2)
+(array([6.4, 2.7, 5.3, 1.9]), 2)
+(array([6.8, 3. , 5.5, 2.1]), 2)
+(array([5.7, 2.5, 5. , 2. ]), 2)
+(array([5.8, 2.8, 5.1, 2.4]), 2)
+(array([6.4, 3.2, 5.3, 2.3]), 2)
+(array([6.5, 3. , 5.5, 1.8]), 2)
+(array([7.7, 3.8, 6.7, 2.2]), 2)
+(array([7.7, 2.6, 6.9, 2.3]), 2)
+(array([6. , 2.2, 5. , 1.5]), 2)
+(array([6.9, 3.2, 5.7, 2.3]), 2)
+(array([5.6, 2.8, 4.9, 2. ]), 2)
+(array([7.7, 2.8, 6.7, 2. ]), 2)
+(array([6.3, 2.7, 4.9, 1.8]), 2)
+(array([6.7, 3.3, 5.7, 2.1]), 2)
+(array([7.2, 3.2, 6. , 1.8]), 2)
+(array([6.2, 2.8, 4.8, 1.8]), 2)
+(array([6.1, 3. , 4.9, 1.8]), 2)
+(array([6.4, 2.8, 5.6, 2.1]), 2)
+(array([7.2, 3. , 5.8, 1.6]), 2)
+(array([7.4, 2.8, 6.1, 1.9]), 2)
+(array([7.9, 3.8, 6.4, 2. ]), 2)
+(array([6.4, 2.8, 5.6, 2.2]), 2)
+(array([6.3, 2.8, 5.1, 1.5]), 2)
+(array([6.1, 2.6, 5.6, 1.4]), 2)
+(array([7.7, 3. , 6.1, 2.3]), 2)
+(array([6.3, 3.4, 5.6, 2.4]), 2)
+(array([6.4, 3.1, 5.5, 1.8]), 2)
+(array([6. , 3. , 4.8, 1.8]), 2)
+(array([6.9, 3.1, 5.4, 2.1]), 2)
+(array([6.7, 3.1, 5.6, 2.4]), 2)
+(array([6.9, 3.1, 5.1, 2.3]), 2)
+(array([5.8, 2.7, 5.1, 1.9]), 2)
+(array([6.8, 3.2, 5.9, 2.3]), 2)
+(array([6.7, 3.3, 5.7, 2.5]), 2)
+(array([6.7, 3. , 5.2, 2.3]), 2)
+(array([6.3, 2.5, 5. , 1.9]), 2)
+(array([6.5, 3. , 5.2, 2. ]), 2)
+(array([6.2, 3.4, 5.4, 2.3]), 2)
+(array([5.9, 3. , 5.1, 1.8]), 2)
+
+In [208]: (list(zip(x, y)) for (x, y) in zip(iris.data, iris.target))
+Out[214]: <generator object <genexpr> at 0x7f95014229e8>
+
+In [234]: list(np.append(x, y) for (x, y) in zip(iris.data, iris.target))
+Out[240]: 
+[array([5.1, 3.5, 1.4, 0.2, 0. ]),
+ array([4.9, 3. , 1.4, 0.2, 0. ]),
+ array([4.7, 3.2, 1.3, 0.2, 0. ]),
+ array([4.6, 3.1, 1.5, 0.2, 0. ]),
+ array([5. , 3.6, 1.4, 0.2, 0. ]),
+ array([5.4, 3.9, 1.7, 0.4, 0. ]),
+ array([4.6, 3.4, 1.4, 0.3, 0. ]),
+ array([5. , 3.4, 1.5, 0.2, 0. ]),
+ array([4.4, 2.9, 1.4, 0.2, 0. ]),
+ array([4.9, 3.1, 1.5, 0.1, 0. ]),
+ array([5.4, 3.7, 1.5, 0.2, 0. ]),
+ array([4.8, 3.4, 1.6, 0.2, 0. ]),
+ array([4.8, 3. , 1.4, 0.1, 0. ]),
+ array([4.3, 3. , 1.1, 0.1, 0. ]),
+ array([5.8, 4. , 1.2, 0.2, 0. ]),
+ array([5.7, 4.4, 1.5, 0.4, 0. ]),
+ array([5.4, 3.9, 1.3, 0.4, 0. ]),
+ array([5.1, 3.5, 1.4, 0.3, 0. ]),
+ array([5.7, 3.8, 1.7, 0.3, 0. ]),
+ array([5.1, 3.8, 1.5, 0.3, 0. ]),
+ array([5.4, 3.4, 1.7, 0.2, 0. ]),
+ array([5.1, 3.7, 1.5, 0.4, 0. ]),
+ array([4.6, 3.6, 1. , 0.2, 0. ]),
+ array([5.1, 3.3, 1.7, 0.5, 0. ]),
+ array([4.8, 3.4, 1.9, 0.2, 0. ]),
+ array([5. , 3. , 1.6, 0.2, 0. ]),
+ array([5. , 3.4, 1.6, 0.4, 0. ]),
+ array([5.2, 3.5, 1.5, 0.2, 0. ]),
+ array([5.2, 3.4, 1.4, 0.2, 0. ]),
+ array([4.7, 3.2, 1.6, 0.2, 0. ]),
+ array([4.8, 3.1, 1.6, 0.2, 0. ]),
+ array([5.4, 3.4, 1.5, 0.4, 0. ]),
+ array([5.2, 4.1, 1.5, 0.1, 0. ]),
+ array([5.5, 4.2, 1.4, 0.2, 0. ]),
+ array([4.9, 3.1, 1.5, 0.1, 0. ]),
+ array([5. , 3.2, 1.2, 0.2, 0. ]),
+ array([5.5, 3.5, 1.3, 0.2, 0. ]),
+ array([4.9, 3.1, 1.5, 0.1, 0. ]),
+ array([4.4, 3. , 1.3, 0.2, 0. ]),
+ array([5.1, 3.4, 1.5, 0.2, 0. ]),
+ array([5. , 3.5, 1.3, 0.3, 0. ]),
+ array([4.5, 2.3, 1.3, 0.3, 0. ]),
+ array([4.4, 3.2, 1.3, 0.2, 0. ]),
+ array([5. , 3.5, 1.6, 0.6, 0. ]),
+ array([5.1, 3.8, 1.9, 0.4, 0. ]),
+ array([4.8, 3. , 1.4, 0.3, 0. ]),
+ array([5.1, 3.8, 1.6, 0.2, 0. ]),
+ array([4.6, 3.2, 1.4, 0.2, 0. ]),
+ array([5.3, 3.7, 1.5, 0.2, 0. ]),
+ array([5. , 3.3, 1.4, 0.2, 0. ]),
+ array([7. , 3.2, 4.7, 1.4, 1. ]),
+ array([6.4, 3.2, 4.5, 1.5, 1. ]),
+ array([6.9, 3.1, 4.9, 1.5, 1. ]),
+ array([5.5, 2.3, 4. , 1.3, 1. ]),
+ array([6.5, 2.8, 4.6, 1.5, 1. ]),
+ array([5.7, 2.8, 4.5, 1.3, 1. ]),
+ array([6.3, 3.3, 4.7, 1.6, 1. ]),
+ array([4.9, 2.4, 3.3, 1. , 1. ]),
+ array([6.6, 2.9, 4.6, 1.3, 1. ]),
+ array([5.2, 2.7, 3.9, 1.4, 1. ]),
+ array([5. , 2. , 3.5, 1. , 1. ]),
+ array([5.9, 3. , 4.2, 1.5, 1. ]),
+ array([6. , 2.2, 4. , 1. , 1. ]),
+ array([6.1, 2.9, 4.7, 1.4, 1. ]),
+ array([5.6, 2.9, 3.6, 1.3, 1. ]),
+ array([6.7, 3.1, 4.4, 1.4, 1. ]),
+ array([5.6, 3. , 4.5, 1.5, 1. ]),
+ array([5.8, 2.7, 4.1, 1. , 1. ]),
+ array([6.2, 2.2, 4.5, 1.5, 1. ]),
+ array([5.6, 2.5, 3.9, 1.1, 1. ]),
+ array([5.9, 3.2, 4.8, 1.8, 1. ]),
+ array([6.1, 2.8, 4. , 1.3, 1. ]),
+ array([6.3, 2.5, 4.9, 1.5, 1. ]),
+ array([6.1, 2.8, 4.7, 1.2, 1. ]),
+ array([6.4, 2.9, 4.3, 1.3, 1. ]),
+ array([6.6, 3. , 4.4, 1.4, 1. ]),
+ array([6.8, 2.8, 4.8, 1.4, 1. ]),
+ array([6.7, 3. , 5. , 1.7, 1. ]),
+ array([6. , 2.9, 4.5, 1.5, 1. ]),
+ array([5.7, 2.6, 3.5, 1. , 1. ]),
+ array([5.5, 2.4, 3.8, 1.1, 1. ]),
+ array([5.5, 2.4, 3.7, 1. , 1. ]),
+ array([5.8, 2.7, 3.9, 1.2, 1. ]),
+ array([6. , 2.7, 5.1, 1.6, 1. ]),
+ array([5.4, 3. , 4.5, 1.5, 1. ]),
+ array([6. , 3.4, 4.5, 1.6, 1. ]),
+ array([6.7, 3.1, 4.7, 1.5, 1. ]),
+ array([6.3, 2.3, 4.4, 1.3, 1. ]),
+ array([5.6, 3. , 4.1, 1.3, 1. ]),
+ array([5.5, 2.5, 4. , 1.3, 1. ]),
+ array([5.5, 2.6, 4.4, 1.2, 1. ]),
+ array([6.1, 3. , 4.6, 1.4, 1. ]),
+ array([5.8, 2.6, 4. , 1.2, 1. ]),
+ array([5. , 2.3, 3.3, 1. , 1. ]),
+ array([5.6, 2.7, 4.2, 1.3, 1. ]),
+ array([5.7, 3. , 4.2, 1.2, 1. ]),
+ array([5.7, 2.9, 4.2, 1.3, 1. ]),
+ array([6.2, 2.9, 4.3, 1.3, 1. ]),
+ array([5.1, 2.5, 3. , 1.1, 1. ]),
+ array([5.7, 2.8, 4.1, 1.3, 1. ]),
+ array([6.3, 3.3, 6. , 2.5, 2. ]),
+ array([5.8, 2.7, 5.1, 1.9, 2. ]),
+ array([7.1, 3. , 5.9, 2.1, 2. ]),
+ array([6.3, 2.9, 5.6, 1.8, 2. ]),
+ array([6.5, 3. , 5.8, 2.2, 2. ]),
+ array([7.6, 3. , 6.6, 2.1, 2. ]),
+ array([4.9, 2.5, 4.5, 1.7, 2. ]),
+ array([7.3, 2.9, 6.3, 1.8, 2. ]),
+ array([6.7, 2.5, 5.8, 1.8, 2. ]),
+ array([7.2, 3.6, 6.1, 2.5, 2. ]),
+ array([6.5, 3.2, 5.1, 2. , 2. ]),
+ array([6.4, 2.7, 5.3, 1.9, 2. ]),
+ array([6.8, 3. , 5.5, 2.1, 2. ]),
+ array([5.7, 2.5, 5. , 2. , 2. ]),
+ array([5.8, 2.8, 5.1, 2.4, 2. ]),
+ array([6.4, 3.2, 5.3, 2.3, 2. ]),
+ array([6.5, 3. , 5.5, 1.8, 2. ]),
+ array([7.7, 3.8, 6.7, 2.2, 2. ]),
+ array([7.7, 2.6, 6.9, 2.3, 2. ]),
+ array([6. , 2.2, 5. , 1.5, 2. ]),
+ array([6.9, 3.2, 5.7, 2.3, 2. ]),
+ array([5.6, 2.8, 4.9, 2. , 2. ]),
+ array([7.7, 2.8, 6.7, 2. , 2. ]),
+ array([6.3, 2.7, 4.9, 1.8, 2. ]),
+ array([6.7, 3.3, 5.7, 2.1, 2. ]),
+ array([7.2, 3.2, 6. , 1.8, 2. ]),
+ array([6.2, 2.8, 4.8, 1.8, 2. ]),
+ array([6.1, 3. , 4.9, 1.8, 2. ]),
+ array([6.4, 2.8, 5.6, 2.1, 2. ]),
+ array([7.2, 3. , 5.8, 1.6, 2. ]),
+ array([7.4, 2.8, 6.1, 1.9, 2. ]),
+ array([7.9, 3.8, 6.4, 2. , 2. ]),
+ array([6.4, 2.8, 5.6, 2.2, 2. ]),
+ array([6.3, 2.8, 5.1, 1.5, 2. ]),
+ array([6.1, 2.6, 5.6, 1.4, 2. ]),
+ array([7.7, 3. , 6.1, 2.3, 2. ]),
+ array([6.3, 3.4, 5.6, 2.4, 2. ]),
+ array([6.4, 3.1, 5.5, 1.8, 2. ]),
+ array([6. , 3. , 4.8, 1.8, 2. ]),
+ array([6.9, 3.1, 5.4, 2.1, 2. ]),
+ array([6.7, 3.1, 5.6, 2.4, 2. ]),
+ array([6.9, 3.1, 5.1, 2.3, 2. ]),
+ array([5.8, 2.7, 5.1, 1.9, 2. ]),
+ array([6.8, 3.2, 5.9, 2.3, 2. ]),
+ array([6.7, 3.3, 5.7, 2.5, 2. ]),
+ array([6.7, 3. , 5.2, 2.3, 2. ]),
+ array([6.3, 2.5, 5. , 1.9, 2. ]),
+ array([6.5, 3. , 5.2, 2. , 2. ]),
+ array([6.2, 3.4, 5.4, 2.3, 2. ]),
+ array([5.9, 3. , 5.1, 1.8, 2. ])]
+
+In [241]: 
+Out[242]: 
+       0    1    2    3    4
+0    5.1  3.5  1.4  0.2  0.0
+1    4.9  3.0  1.4  0.2  0.0
+2    4.7  3.2  1.3  0.2  0.0
+3    4.6  3.1  1.5  0.2  0.0
+4    5.0  3.6  1.4  0.2  0.0
+5    5.4  3.9  1.7  0.4  0.0
+6    4.6  3.4  1.4  0.3  0.0
+7    5.0  3.4  1.5  0.2  0.0
+8    4.4  2.9  1.4  0.2  0.0
+9    4.9  3.1  1.5  0.1  0.0
+10   5.4  3.7  1.5  0.2  0.0
+11   4.8  3.4  1.6  0.2  0.0
+12   4.8  3.0  1.4  0.1  0.0
+13   4.3  3.0  1.1  0.1  0.0
+14   5.8  4.0  1.2  0.2  0.0
+15   5.7  4.4  1.5  0.4  0.0
+16   5.4  3.9  1.3  0.4  0.0
+17   5.1  3.5  1.4  0.3  0.0
+18   5.7  3.8  1.7  0.3  0.0
+19   5.1  3.8  1.5  0.3  0.0
+20   5.4  3.4  1.7  0.2  0.0
+21   5.1  3.7  1.5  0.4  0.0
+22   4.6  3.6  1.0  0.2  0.0
+23   5.1  3.3  1.7  0.5  0.0
+24   4.8  3.4  1.9  0.2  0.0
+25   5.0  3.0  1.6  0.2  0.0
+26   5.0  3.4  1.6  0.4  0.0
+27   5.2  3.5  1.5  0.2  0.0
+28   5.2  3.4  1.4  0.2  0.0
+29   4.7  3.2  1.6  0.2  0.0
+..   ...  ...  ...  ...  ...
+120  6.9  3.2  5.7  2.3  2.0
+121  5.6  2.8  4.9  2.0  2.0
+122  7.7  2.8  6.7  2.0  2.0
+123  6.3  2.7  4.9  1.8  2.0
+124  6.7  3.3  5.7  2.1  2.0
+125  7.2  3.2  6.0  1.8  2.0
+126  6.2  2.8  4.8  1.8  2.0
+127  6.1  3.0  4.9  1.8  2.0
+128  6.4  2.8  5.6  2.1  2.0
+129  7.2  3.0  5.8  1.6  2.0
+130  7.4  2.8  6.1  1.9  2.0
+131  7.9  3.8  6.4  2.0  2.0
+132  6.4  2.8  5.6  2.2  2.0
+133  6.3  2.8  5.1  1.5  2.0
+134  6.1  2.6  5.6  1.4  2.0
+135  7.7  3.0  6.1  2.3  2.0
+136  6.3  3.4  5.6  2.4  2.0
+137  6.4  3.1  5.5  1.8  2.0
+138  6.0  3.0  4.8  1.8  2.0
+139  6.9  3.1  5.4  2.1  2.0
+140  6.7  3.1  5.6  2.4  2.0
+141  6.9  3.1  5.1  2.3  2.0
+142  5.8  2.7  5.1  1.9  2.0
+143  6.8  3.2  5.9  2.3  2.0
+144  6.7  3.3  5.7  2.5  2.0
+145  6.7  3.0  5.2  2.3  2.0
+146  6.3  2.5  5.0  1.9  2.0
+147  6.5  3.0  5.2  2.0  2.0
+148  6.2  3.4  5.4  2.3  2.0
+149  5.9  3.0  5.1  1.8  2.0
+
+[150 rows x 5 columns]
+
+In [243]: list(np.append(x, y) for (x, y) in zip(iris.data, iris.target))  C-c C-c
+KeyboardInterrupt escaped interact()
+
+
+In [243]: list(zip([1, 2, 3], [4, 5, 6]))
+Out[243]: [(1, 4), (2, 5), (3, 6)]
+
+In [244]: list(zip([1, 2, 3], [4, 5, 6])  C-c C-c
+KeyboardInterrupt escaped interact()
+
+
+In [244]: for (x, y) in zip(iris.data, iris.target):
+     ...:     np.append(x, y)
+Out[247]: 
+array([array([5.9, 3. , 5.1, 1.8]), 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1,
+       1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+       1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+       2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+       2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+       2, 2, 2, 2, 2, 2], dtype=object)
+
+In [248]: 
+
+In [248]: for (x, y) in zip(iris.data, iris.target):
+     ...:     print((x, y))
+     ...: 
+(array([5.1, 3.5, 1.4, 0.2]), 0)
+(array([4.9, 3. , 1.4, 0.2]), 0)
+(array([4.7, 3.2, 1.3, 0.2]), 0)
+(array([4.6, 3.1, 1.5, 0.2]), 0)
+(array([5. , 3.6, 1.4, 0.2]), 0)
+(array([5.4, 3.9, 1.7, 0.4]), 0)
+(array([4.6, 3.4, 1.4, 0.3]), 0)
+(array([5. , 3.4, 1.5, 0.2]), 0)
+(array([4.4, 2.9, 1.4, 0.2]), 0)
+(array([4.9, 3.1, 1.5, 0.1]), 0)
+(array([5.4, 3.7, 1.5, 0.2]), 0)
+(array([4.8, 3.4, 1.6, 0.2]), 0)
+(array([4.8, 3. , 1.4, 0.1]), 0)
+(array([4.3, 3. , 1.1, 0.1]), 0)
+(array([5.8, 4. , 1.2, 0.2]), 0)
+(array([5.7, 4.4, 1.5, 0.4]), 0)
+(array([5.4, 3.9, 1.3, 0.4]), 0)
+(array([5.1, 3.5, 1.4, 0.3]), 0)
+(array([5.7, 3.8, 1.7, 0.3]), 0)
+(array([5.1, 3.8, 1.5, 0.3]), 0)
+(array([5.4, 3.4, 1.7, 0.2]), 0)
+(array([5.1, 3.7, 1.5, 0.4]), 0)
+(array([4.6, 3.6, 1. , 0.2]), 0)
+(array([5.1, 3.3, 1.7, 0.5]), 0)
+(array([4.8, 3.4, 1.9, 0.2]), 0)
+(array([5. , 3. , 1.6, 0.2]), 0)
+(array([5. , 3.4, 1.6, 0.4]), 0)
+(array([5.2, 3.5, 1.5, 0.2]), 0)
+(array([5.2, 3.4, 1.4, 0.2]), 0)
+(array([4.7, 3.2, 1.6, 0.2]), 0)
+(array([4.8, 3.1, 1.6, 0.2]), 0)
+(array([5.4, 3.4, 1.5, 0.4]), 0)
+(array([5.2, 4.1, 1.5, 0.1]), 0)
+(array([5.5, 4.2, 1.4, 0.2]), 0)
+(array([4.9, 3.1, 1.5, 0.1]), 0)
+(array([5. , 3.2, 1.2, 0.2]), 0)
+(array([5.5, 3.5, 1.3, 0.2]), 0)
+(array([4.9, 3.1, 1.5, 0.1]), 0)
+(array([4.4, 3. , 1.3, 0.2]), 0)
+(array([5.1, 3.4, 1.5, 0.2]), 0)
+(array([5. , 3.5, 1.3, 0.3]), 0)
+(array([4.5, 2.3, 1.3, 0.3]), 0)
+(array([4.4, 3.2, 1.3, 0.2]), 0)
+(array([5. , 3.5, 1.6, 0.6]), 0)
+(array([5.1, 3.8, 1.9, 0.4]), 0)
+(array([4.8, 3. , 1.4, 0.3]), 0)
+(array([5.1, 3.8, 1.6, 0.2]), 0)
+(array([4.6, 3.2, 1.4, 0.2]), 0)
+(array([5.3, 3.7, 1.5, 0.2]), 0)
+(array([5. , 3.3, 1.4, 0.2]), 0)
+(array([7. , 3.2, 4.7, 1.4]), 1)
+(array([6.4, 3.2, 4.5, 1.5]), 1)
+(array([6.9, 3.1, 4.9, 1.5]), 1)
+(array([5.5, 2.3, 4. , 1.3]), 1)
+(array([6.5, 2.8, 4.6, 1.5]), 1)
+(array([5.7, 2.8, 4.5, 1.3]), 1)
+(array([6.3, 3.3, 4.7, 1.6]), 1)
+(array([4.9, 2.4, 3.3, 1. ]), 1)
+(array([6.6, 2.9, 4.6, 1.3]), 1)
+(array([5.2, 2.7, 3.9, 1.4]), 1)
+(array([5. , 2. , 3.5, 1. ]), 1)
+(array([5.9, 3. , 4.2, 1.5]), 1)
+(array([6. , 2.2, 4. , 1. ]), 1)
+(array([6.1, 2.9, 4.7, 1.4]), 1)
+(array([5.6, 2.9, 3.6, 1.3]), 1)
+(array([6.7, 3.1, 4.4, 1.4]), 1)
+(array([5.6, 3. , 4.5, 1.5]), 1)
+(array([5.8, 2.7, 4.1, 1. ]), 1)
+(array([6.2, 2.2, 4.5, 1.5]), 1)
+(array([5.6, 2.5, 3.9, 1.1]), 1)
+(array([5.9, 3.2, 4.8, 1.8]), 1)
+(array([6.1, 2.8, 4. , 1.3]), 1)
+(array([6.3, 2.5, 4.9, 1.5]), 1)
+(array([6.1, 2.8, 4.7, 1.2]), 1)
+(array([6.4, 2.9, 4.3, 1.3]), 1)
+(array([6.6, 3. , 4.4, 1.4]), 1)
+(array([6.8, 2.8, 4.8, 1.4]), 1)
+(array([6.7, 3. , 5. , 1.7]), 1)
+(array([6. , 2.9, 4.5, 1.5]), 1)
+(array([5.7, 2.6, 3.5, 1. ]), 1)
+(array([5.5, 2.4, 3.8, 1.1]), 1)
+(array([5.5, 2.4, 3.7, 1. ]), 1)
+(array([5.8, 2.7, 3.9, 1.2]), 1)
+(array([6. , 2.7, 5.1, 1.6]), 1)
+(array([5.4, 3. , 4.5, 1.5]), 1)
+(array([6. , 3.4, 4.5, 1.6]), 1)
+(array([6.7, 3.1, 4.7, 1.5]), 1)
+(array([6.3, 2.3, 4.4, 1.3]), 1)
+(array([5.6, 3. , 4.1, 1.3]), 1)
+(array([5.5, 2.5, 4. , 1.3]), 1)
+(array([5.5, 2.6, 4.4, 1.2]), 1)
+(array([6.1, 3. , 4.6, 1.4]), 1)
+(array([5.8, 2.6, 4. , 1.2]), 1)
+(array([5. , 2.3, 3.3, 1. ]), 1)
+(array([5.6, 2.7, 4.2, 1.3]), 1)
+(array([5.7, 3. , 4.2, 1.2]), 1)
+(array([5.7, 2.9, 4.2, 1.3]), 1)
+(array([6.2, 2.9, 4.3, 1.3]), 1)
+(array([5.1, 2.5, 3. , 1.1]), 1)
+(array([5.7, 2.8, 4.1, 1.3]), 1)
+(array([6.3, 3.3, 6. , 2.5]), 2)
+(array([5.8, 2.7, 5.1, 1.9]), 2)
+(array([7.1, 3. , 5.9, 2.1]), 2)
+(array([6.3, 2.9, 5.6, 1.8]), 2)
+(array([6.5, 3. , 5.8, 2.2]), 2)
+(array([7.6, 3. , 6.6, 2.1]), 2)
+(array([4.9, 2.5, 4.5, 1.7]), 2)
+(array([7.3, 2.9, 6.3, 1.8]), 2)
+(array([6.7, 2.5, 5.8, 1.8]), 2)
+(array([7.2, 3.6, 6.1, 2.5]), 2)
+(array([6.5, 3.2, 5.1, 2. ]), 2)
+(array([6.4, 2.7, 5.3, 1.9]), 2)
+(array([6.8, 3. , 5.5, 2.1]), 2)
+(array([5.7, 2.5, 5. , 2. ]), 2)
+(array([5.8, 2.8, 5.1, 2.4]), 2)
+(array([6.4, 3.2, 5.3, 2.3]), 2)
+(array([6.5, 3. , 5.5, 1.8]), 2)
+(array([7.7, 3.8, 6.7, 2.2]), 2)
+(array([7.7, 2.6, 6.9, 2.3]), 2)
+(array([6. , 2.2, 5. , 1.5]), 2)
+(array([6.9, 3.2, 5.7, 2.3]), 2)
+(array([5.6, 2.8, 4.9, 2. ]), 2)
+(array([7.7, 2.8, 6.7, 2. ]), 2)
+(array([6.3, 2.7, 4.9, 1.8]), 2)
+(array([6.7, 3.3, 5.7, 2.1]), 2)
+(array([7.2, 3.2, 6. , 1.8]), 2)
+(array([6.2, 2.8, 4.8, 1.8]), 2)
+(array([6.1, 3. , 4.9, 1.8]), 2)
+(array([6.4, 2.8, 5.6, 2.1]), 2)
+(array([7.2, 3. , 5.8, 1.6]), 2)
+(array([7.4, 2.8, 6.1, 1.9]), 2)
+(array([7.9, 3.8, 6.4, 2. ]), 2)
+(array([6.4, 2.8, 5.6, 2.2]), 2)
+(array([6.3, 2.8, 5.1, 1.5]), 2)
+(array([6.1, 2.6, 5.6, 1.4]), 2)
+(array([7.7, 3. , 6.1, 2.3]), 2)
+(array([6.3, 3.4, 5.6, 2.4]), 2)
+(array([6.4, 3.1, 5.5, 1.8]), 2)
+(array([6. , 3. , 4.8, 1.8]), 2)
+(array([6.9, 3.1, 5.4, 2.1]), 2)
+(array([6.7, 3.1, 5.6, 2.4]), 2)
+(array([6.9, 3.1, 5.1, 2.3]), 2)
+(array([5.8, 2.7, 5.1, 1.9]), 2)
+(array([6.8, 3.2, 5.9, 2.3]), 2)
+(array([6.7, 3.3, 5.7, 2.5]), 2)
+(array([6.7, 3. , 5.2, 2.3]), 2)
+(array([6.3, 2.5, 5. , 1.9]), 2)
+(array([6.5, 3. , 5.2, 2. ]), 2)
+(array([6.2, 3.4, 5.4, 2.3]), 2)
+(array([5.9, 3. , 5.1, 1.8]), 2)
+
+In [249]: for (x, y) in zip(iris.data, iris.target):
+     ...:    print(np.append(x, y))
+[5.9 3.  5.1 1.8 2. ]
+
+In [278]: foo = pd.DataFrame(list(np.append(x, y) for (x, y) in zip(iris.data, iris.target)))
+
+In [279]: foo
+Out[279]: 
+       0    1    2    3    4
+0    5.1  3.5  1.4  0.2  0.0
+1    4.9  3.0  1.4  0.2  0.0
+2    4.7  3.2  1.3  0.2  0.0
+3    4.6  3.1  1.5  0.2  0.0
+4    5.0  3.6  1.4  0.2  0.0
+5    5.4  3.9  1.7  0.4  0.0
+6    4.6  3.4  1.4  0.3  0.0
+7    5.0  3.4  1.5  0.2  0.0
+8    4.4  2.9  1.4  0.2  0.0
+9    4.9  3.1  1.5  0.1  0.0
+10   5.4  3.7  1.5  0.2  0.0
+11   4.8  3.4  1.6  0.2  0.0
+12   4.8  3.0  1.4  0.1  0.0
+13   4.3  3.0  1.1  0.1  0.0
+14   5.8  4.0  1.2  0.2  0.0
+15   5.7  4.4  1.5  0.4  0.0
+16   5.4  3.9  1.3  0.4  0.0
+17   5.1  3.5  1.4  0.3  0.0
+18   5.7  3.8  1.7  0.3  0.0
+19   5.1  3.8  1.5  0.3  0.0
+20   5.4  3.4  1.7  0.2  0.0
+21   5.1  3.7  1.5  0.4  0.0
+22   4.6  3.6  1.0  0.2  0.0
+23   5.1  3.3  1.7  0.5  0.0
+24   4.8  3.4  1.9  0.2  0.0
+25   5.0  3.0  1.6  0.2  0.0
+26   5.0  3.4  1.6  0.4  0.0
+27   5.2  3.5  1.5  0.2  0.0
+28   5.2  3.4  1.4  0.2  0.0
+29   4.7  3.2  1.6  0.2  0.0
+..   ...  ...  ...  ...  ...
+120  6.9  3.2  5.7  2.3  2.0
+121  5.6  2.8  4.9  2.0  2.0
+122  7.7  2.8  6.7  2.0  2.0
+123  6.3  2.7  4.9  1.8  2.0
+124  6.7  3.3  5.7  2.1  2.0
+125  7.2  3.2  6.0  1.8  2.0
+126  6.2  2.8  4.8  1.8  2.0
+127  6.1  3.0  4.9  1.8  2.0
+128  6.4  2.8  5.6  2.1  2.0
+129  7.2  3.0  5.8  1.6  2.0
+130  7.4  2.8  6.1  1.9  2.0
+131  7.9  3.8  6.4  2.0  2.0
+132  6.4  2.8  5.6  2.2  2.0
+133  6.3  2.8  5.1  1.5  2.0
+134  6.1  2.6  5.6  1.4  2.0
+135  7.7  3.0  6.1  2.3  2.0
+136  6.3  3.4  5.6  2.4  2.0
+137  6.4  3.1  5.5  1.8  2.0
+138  6.0  3.0  4.8  1.8  2.0
+139  6.9  3.1  5.4  2.1  2.0
+140  6.7  3.1  5.6  2.4  2.0
+141  6.9  3.1  5.1  2.3  2.0
+142  5.8  2.7  5.1  1.9  2.0
+143  6.8  3.2  5.9  2.3  2.0
+144  6.7  3.3  5.7  2.5  2.0
+145  6.7  3.0  5.2  2.3  2.0
+146  6.3  2.5  5.0  1.9  2.0
+147  6.5  3.0  5.2  2.0  2.0
+148  6.2  3.4  5.4  2.3  2.0
+149  5.9  3.0  5.1  1.8  2.0
+
+[150 rows x 5 columns]
+
+In [280]: y
+Out[282]: 2
+
+In [283]: y = iris.target
+
+In [284]: y
+Out[284]: 
+array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+       1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+       1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+       2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+       2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2])
+
+In [285]: z = list(1 if a == 2 else 0 for a in iris.target)
+
+In [286]: z
+Out[286]: 
+[0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1]
+
+In [287]: print(z)
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+In [288]: z = [1 if a == 2 else 0 for a in iris.target]  C-c C-c
+KeyboardInterrupt escaped interact()
+
+
+In [288]: foo
+Out[290]: 
+       0    1    2    3    4
+0    5.1  3.5  1.4  0.2  0.0
+1    4.9  3.0  1.4  0.2  0.0
+2    4.7  3.2  1.3  0.2  0.0
+3    4.6  3.1  1.5  0.2  0.0
+4    5.0  3.6  1.4  0.2  0.0
+5    5.4  3.9  1.7  0.4  0.0
+6    4.6  3.4  1.4  0.3  0.0
+7    5.0  3.4  1.5  0.2  0.0
+8    4.4  2.9  1.4  0.2  0.0
+9    4.9  3.1  1.5  0.1  0.0
+10   5.4  3.7  1.5  0.2  0.0
+11   4.8  3.4  1.6  0.2  0.0
+12   4.8  3.0  1.4  0.1  0.0
+13   4.3  3.0  1.1  0.1  0.0
+14   5.8  4.0  1.2  0.2  0.0
+15   5.7  4.4  1.5  0.4  0.0
+16   5.4  3.9  1.3  0.4  0.0
+17   5.1  3.5  1.4  0.3  0.0
+18   5.7  3.8  1.7  0.3  0.0
+19   5.1  3.8  1.5  0.3  0.0
+20   5.4  3.4  1.7  0.2  0.0
+21   5.1  3.7  1.5  0.4  0.0
+22   4.6  3.6  1.0  0.2  0.0
+23   5.1  3.3  1.7  0.5  0.0
+24   4.8  3.4  1.9  0.2  0.0
+25   5.0  3.0  1.6  0.2  0.0
+26   5.0  3.4  1.6  0.4  0.0
+27   5.2  3.5  1.5  0.2  0.0
+28   5.2  3.4  1.4  0.2  0.0
+29   4.7  3.2  1.6  0.2  0.0
+..   ...  ...  ...  ...  ...
+120  6.9  3.2  5.7  2.3  2.0
+121  5.6  2.8  4.9  2.0  2.0
+122  7.7  2.8  6.7  2.0  2.0
+123  6.3  2.7  4.9  1.8  2.0
+124  6.7  3.3  5.7  2.1  2.0
+125  7.2  3.2  6.0  1.8  2.0
+126  6.2  2.8  4.8  1.8  2.0
+127  6.1  3.0  4.9  1.8  2.0
+128  6.4  2.8  5.6  2.1  2.0
+129  7.2  3.0  5.8  1.6  2.0
+130  7.4  2.8  6.1  1.9  2.0
+131  7.9  3.8  6.4  2.0  2.0
+132  6.4  2.8  5.6  2.2  2.0
+133  6.3  2.8  5.1  1.5  2.0
+134  6.1  2.6  5.6  1.4  2.0
+135  7.7  3.0  6.1  2.3  2.0
+136  6.3  3.4  5.6  2.4  2.0
+137  6.4  3.1  5.5  1.8  2.0
+138  6.0  3.0  4.8  1.8  2.0
+139  6.9  3.1  5.4  2.1  2.0
+140  6.7  3.1  5.6  2.4  2.0
+141  6.9  3.1  5.1  2.3  2.0
+142  5.8  2.7  5.1  1.9  2.0
+143  6.8  3.2  5.9  2.3  2.0
+144  6.7  3.3  5.7  2.5  2.0
+145  6.7  3.0  5.2  2.3  2.0
+146  6.3  2.5  5.0  1.9  2.0
+147  6.5  3.0  5.2  2.0  2.0
+148  6.2  3.4  5.4  2.3  2.0
+149  5.9  3.0  5.1  1.8  2.0
+
+[150 rows x 5 columns]
+
+In [291]: foo[:]
+Out[291]: 
+       0    1    2    3    4
+0    5.1  3.5  1.4  0.2  0.0
+1    4.9  3.0  1.4  0.2  0.0
+2    4.7  3.2  1.3  0.2  0.0
+3    4.6  3.1  1.5  0.2  0.0
+4    5.0  3.6  1.4  0.2  0.0
+5    5.4  3.9  1.7  0.4  0.0
+6    4.6  3.4  1.4  0.3  0.0
+7    5.0  3.4  1.5  0.2  0.0
+8    4.4  2.9  1.4  0.2  0.0
+9    4.9  3.1  1.5  0.1  0.0
+10   5.4  3.7  1.5  0.2  0.0
+11   4.8  3.4  1.6  0.2  0.0
+12   4.8  3.0  1.4  0.1  0.0
+13   4.3  3.0  1.1  0.1  0.0
+14   5.8  4.0  1.2  0.2  0.0
+15   5.7  4.4  1.5  0.4  0.0
+16   5.4  3.9  1.3  0.4  0.0
+17   5.1  3.5  1.4  0.3  0.0
+18   5.7  3.8  1.7  0.3  0.0
+19   5.1  3.8  1.5  0.3  0.0
+20   5.4  3.4  1.7  0.2  0.0
+21   5.1  3.7  1.5  0.4  0.0
+22   4.6  3.6  1.0  0.2  0.0
+23   5.1  3.3  1.7  0.5  0.0
+24   4.8  3.4  1.9  0.2  0.0
+25   5.0  3.0  1.6  0.2  0.0
+26   5.0  3.4  1.6  0.4  0.0
+27   5.2  3.5  1.5  0.2  0.0
+28   5.2  3.4  1.4  0.2  0.0
+29   4.7  3.2  1.6  0.2  0.0
+..   ...  ...  ...  ...  ...
+120  6.9  3.2  5.7  2.3  2.0
+121  5.6  2.8  4.9  2.0  2.0
+122  7.7  2.8  6.7  2.0  2.0
+123  6.3  2.7  4.9  1.8  2.0
+124  6.7  3.3  5.7  2.1  2.0
+125  7.2  3.2  6.0  1.8  2.0
+126  6.2  2.8  4.8  1.8  2.0
+127  6.1  3.0  4.9  1.8  2.0
+128  6.4  2.8  5.6  2.1  2.0
+129  7.2  3.0  5.8  1.6  2.0
+130  7.4  2.8  6.1  1.9  2.0
+131  7.9  3.8  6.4  2.0  2.0
+132  6.4  2.8  5.6  2.2  2.0
+133  6.3  2.8  5.1  1.5  2.0
+134  6.1  2.6  5.6  1.4  2.0
+135  7.7  3.0  6.1  2.3  2.0
+136  6.3  3.4  5.6  2.4  2.0
+137  6.4  3.1  5.5  1.8  2.0
+138  6.0  3.0  4.8  1.8  2.0
+139  6.9  3.1  5.4  2.1  2.0
+140  6.7  3.1  5.6  2.4  2.0
+141  6.9  3.1  5.1  2.3  2.0
+142  5.8  2.7  5.1  1.9  2.0
+143  6.8  3.2  5.9  2.3  2.0
+144  6.7  3.3  5.7  2.5  2.0
+145  6.7  3.0  5.2  2.3  2.0
+146  6.3  2.5  5.0  1.9  2.0
+147  6.5  3.0  5.2  2.0  2.0
+148  6.2  3.4  5.4  2.3  2.0
+149  5.9  3.0  5.1  1.8  2.0
+
+[150 rows x 5 columns]
+
+In [292]: 'foobar'[2:4]
+Out[301]: 'ob'
+
+In [302]: 'foobar'[2:]
+Out[302]: 'obar'
+
+In [303]: foo[:5]
+Out[303]: 
+     0    1    2    3    4
+0  5.1  3.5  1.4  0.2  0.0
+1  4.9  3.0  1.4  0.2  0.0
+2  4.7  3.2  1.3  0.2  0.0
+3  4.6  3.1  1.5  0.2  0.0
+4  5.0  3.6  1.4  0.2  0.0
+
+In [305]: foo = list(np.append(x, y) for (x, y) in zip(iris.data, iris.target))
+
+In [306]: foo
+Out[306]: 
+[array([5.1, 3.5, 1.4, 0.2, 0. ]),
+ array([4.9, 3. , 1.4, 0.2, 0. ]),
+ array([4.7, 3.2, 1.3, 0.2, 0. ]),
+ array([4.6, 3.1, 1.5, 0.2, 0. ]),
+ array([5. , 3.6, 1.4, 0.2, 0. ]),
+ array([5.4, 3.9, 1.7, 0.4, 0. ]),
+ array([4.6, 3.4, 1.4, 0.3, 0. ]),
+ array([5. , 3.4, 1.5, 0.2, 0. ]),
+ array([4.4, 2.9, 1.4, 0.2, 0. ]),
+ array([4.9, 3.1, 1.5, 0.1, 0. ]),
+ array([5.4, 3.7, 1.5, 0.2, 0. ]),
+ array([4.8, 3.4, 1.6, 0.2, 0. ]),
+ array([4.8, 3. , 1.4, 0.1, 0. ]),
+ array([4.3, 3. , 1.1, 0.1, 0. ]),
+ array([5.8, 4. , 1.2, 0.2, 0. ]),
+ array([5.7, 4.4, 1.5, 0.4, 0. ]),
+ array([5.4, 3.9, 1.3, 0.4, 0. ]),
+ array([5.1, 3.5, 1.4, 0.3, 0. ]),
+ array([5.7, 3.8, 1.7, 0.3, 0. ]),
+ array([5.1, 3.8, 1.5, 0.3, 0. ]),
+ array([5.4, 3.4, 1.7, 0.2, 0. ]),
+ array([5.1, 3.7, 1.5, 0.4, 0. ]),
+ array([4.6, 3.6, 1. , 0.2, 0. ]),
+ array([5.1, 3.3, 1.7, 0.5, 0. ]),
+ array([4.8, 3.4, 1.9, 0.2, 0. ]),
+ array([5. , 3. , 1.6, 0.2, 0. ]),
+ array([5. , 3.4, 1.6, 0.4, 0. ]),
+ array([5.2, 3.5, 1.5, 0.2, 0. ]),
+ array([5.2, 3.4, 1.4, 0.2, 0. ]),
+ array([4.7, 3.2, 1.6, 0.2, 0. ]),
+ array([4.8, 3.1, 1.6, 0.2, 0. ]),
+ array([5.4, 3.4, 1.5, 0.4, 0. ]),
+ array([5.2, 4.1, 1.5, 0.1, 0. ]),
+ array([5.5, 4.2, 1.4, 0.2, 0. ]),
+ array([4.9, 3.1, 1.5, 0.1, 0. ]),
+ array([5. , 3.2, 1.2, 0.2, 0. ]),
+ array([5.5, 3.5, 1.3, 0.2, 0. ]),
+ array([4.9, 3.1, 1.5, 0.1, 0. ]),
+ array([4.4, 3. , 1.3, 0.2, 0. ]),
+ array([5.1, 3.4, 1.5, 0.2, 0. ]),
+ array([5. , 3.5, 1.3, 0.3, 0. ]),
+ array([4.5, 2.3, 1.3, 0.3, 0. ]),
+ array([4.4, 3.2, 1.3, 0.2, 0. ]),
+ array([5. , 3.5, 1.6, 0.6, 0. ]),
+ array([5.1, 3.8, 1.9, 0.4, 0. ]),
+ array([4.8, 3. , 1.4, 0.3, 0. ]),
+ array([5.1, 3.8, 1.6, 0.2, 0. ]),
+ array([4.6, 3.2, 1.4, 0.2, 0. ]),
+ array([5.3, 3.7, 1.5, 0.2, 0. ]),
+ array([5. , 3.3, 1.4, 0.2, 0. ]),
+ array([7. , 3.2, 4.7, 1.4, 1. ]),
+ array([6.4, 3.2, 4.5, 1.5, 1. ]),
+ array([6.9, 3.1, 4.9, 1.5, 1. ]),
+ array([5.5, 2.3, 4. , 1.3, 1. ]),
+ array([6.5, 2.8, 4.6, 1.5, 1. ]),
+ array([5.7, 2.8, 4.5, 1.3, 1. ]),
+ array([6.3, 3.3, 4.7, 1.6, 1. ]),
+ array([4.9, 2.4, 3.3, 1. , 1. ]),
+ array([6.6, 2.9, 4.6, 1.3, 1. ]),
+ array([5.2, 2.7, 3.9, 1.4, 1. ]),
+ array([5. , 2. , 3.5, 1. , 1. ]),
+ array([5.9, 3. , 4.2, 1.5, 1. ]),
+ array([6. , 2.2, 4. , 1. , 1. ]),
+ array([6.1, 2.9, 4.7, 1.4, 1. ]),
+ array([5.6, 2.9, 3.6, 1.3, 1. ]),
+ array([6.7, 3.1, 4.4, 1.4, 1. ]),
+ array([5.6, 3. , 4.5, 1.5, 1. ]),
+ array([5.8, 2.7, 4.1, 1. , 1. ]),
+ array([6.2, 2.2, 4.5, 1.5, 1. ]),
+ array([5.6, 2.5, 3.9, 1.1, 1. ]),
+ array([5.9, 3.2, 4.8, 1.8, 1. ]),
+ array([6.1, 2.8, 4. , 1.3, 1. ]),
+ array([6.3, 2.5, 4.9, 1.5, 1. ]),
+ array([6.1, 2.8, 4.7, 1.2, 1. ]),
+ array([6.4, 2.9, 4.3, 1.3, 1. ]),
+ array([6.6, 3. , 4.4, 1.4, 1. ]),
+ array([6.8, 2.8, 4.8, 1.4, 1. ]),
+ array([6.7, 3. , 5. , 1.7, 1. ]),
+ array([6. , 2.9, 4.5, 1.5, 1. ]),
+ array([5.7, 2.6, 3.5, 1. , 1. ]),
+ array([5.5, 2.4, 3.8, 1.1, 1. ]),
+ array([5.5, 2.4, 3.7, 1. , 1. ]),
+ array([5.8, 2.7, 3.9, 1.2, 1. ]),
+ array([6. , 2.7, 5.1, 1.6, 1. ]),
+ array([5.4, 3. , 4.5, 1.5, 1. ]),
+ array([6. , 3.4, 4.5, 1.6, 1. ]),
+ array([6.7, 3.1, 4.7, 1.5, 1. ]),
+ array([6.3, 2.3, 4.4, 1.3, 1. ]),
+ array([5.6, 3. , 4.1, 1.3, 1. ]),
+ array([5.5, 2.5, 4. , 1.3, 1. ]),
+ array([5.5, 2.6, 4.4, 1.2, 1. ]),
+ array([6.1, 3. , 4.6, 1.4, 1. ]),
+ array([5.8, 2.6, 4. , 1.2, 1. ]),
+ array([5. , 2.3, 3.3, 1. , 1. ]),
+ array([5.6, 2.7, 4.2, 1.3, 1. ]),
+ array([5.7, 3. , 4.2, 1.2, 1. ]),
+ array([5.7, 2.9, 4.2, 1.3, 1. ]),
+ array([6.2, 2.9, 4.3, 1.3, 1. ]),
+ array([5.1, 2.5, 3. , 1.1, 1. ]),
+ array([5.7, 2.8, 4.1, 1.3, 1. ]),
+ array([6.3, 3.3, 6. , 2.5, 2. ]),
+ array([5.8, 2.7, 5.1, 1.9, 2. ]),
+ array([7.1, 3. , 5.9, 2.1, 2. ]),
+ array([6.3, 2.9, 5.6, 1.8, 2. ]),
+ array([6.5, 3. , 5.8, 2.2, 2. ]),
+ array([7.6, 3. , 6.6, 2.1, 2. ]),
+ array([4.9, 2.5, 4.5, 1.7, 2. ]),
+ array([7.3, 2.9, 6.3, 1.8, 2. ]),
+ array([6.7, 2.5, 5.8, 1.8, 2. ]),
+ array([7.2, 3.6, 6.1, 2.5, 2. ]),
+ array([6.5, 3.2, 5.1, 2. , 2. ]),
+ array([6.4, 2.7, 5.3, 1.9, 2. ]),
+ array([6.8, 3. , 5.5, 2.1, 2. ]),
+ array([5.7, 2.5, 5. , 2. , 2. ]),
+ array([5.8, 2.8, 5.1, 2.4, 2. ]),
+ array([6.4, 3.2, 5.3, 2.3, 2. ]),
+ array([6.5, 3. , 5.5, 1.8, 2. ]),
+ array([7.7, 3.8, 6.7, 2.2, 2. ]),
+ array([7.7, 2.6, 6.9, 2.3, 2. ]),
+ array([6. , 2.2, 5. , 1.5, 2. ]),
+ array([6.9, 3.2, 5.7, 2.3, 2. ]),
+ array([5.6, 2.8, 4.9, 2. , 2. ]),
+ array([7.7, 2.8, 6.7, 2. , 2. ]),
+ array([6.3, 2.7, 4.9, 1.8, 2. ]),
+ array([6.7, 3.3, 5.7, 2.1, 2. ]),
+ array([7.2, 3.2, 6. , 1.8, 2. ]),
+ array([6.2, 2.8, 4.8, 1.8, 2. ]),
+ array([6.1, 3. , 4.9, 1.8, 2. ]),
+ array([6.4, 2.8, 5.6, 2.1, 2. ]),
+ array([7.2, 3. , 5.8, 1.6, 2. ]),
+ array([7.4, 2.8, 6.1, 1.9, 2. ]),
+ array([7.9, 3.8, 6.4, 2. , 2. ]),
+ array([6.4, 2.8, 5.6, 2.2, 2. ]),
+ array([6.3, 2.8, 5.1, 1.5, 2. ]),
+ array([6.1, 2.6, 5.6, 1.4, 2. ]),
+ array([7.7, 3. , 6.1, 2.3, 2. ]),
+ array([6.3, 3.4, 5.6, 2.4, 2. ]),
+ array([6.4, 3.1, 5.5, 1.8, 2. ]),
+ array([6. , 3. , 4.8, 1.8, 2. ]),
+ array([6.9, 3.1, 5.4, 2.1, 2. ]),
+ array([6.7, 3.1, 5.6, 2.4, 2. ]),
+ array([6.9, 3.1, 5.1, 2.3, 2. ]),
+ array([5.8, 2.7, 5.1, 1.9, 2. ]),
+ array([6.8, 3.2, 5.9, 2.3, 2. ]),
+ array([6.7, 3.3, 5.7, 2.5, 2. ]),
+ array([6.7, 3. , 5.2, 2.3, 2. ]),
+ array([6.3, 2.5, 5. , 1.9, 2. ]),
+ array([6.5, 3. , 5.2, 2. , 2. ]),
+ array([6.2, 3.4, 5.4, 2.3, 2. ]),
+ array([5.9, 3. , 5.1, 1.8, 2. ])]
+
+In [308]: foo[:5]
+Out[308]: 
+[array([5.1, 3.5, 1.4, 0.2, 0. ]),
+ array([4.9, 3. , 1.4, 0.2, 0. ]),
+ array([4.7, 3.2, 1.3, 0.2, 0. ]),
+ array([4.6, 3.1, 1.5, 0.2, 0. ]),
+ array([5. , 3.6, 1.4, 0.2, 0. ])]
+
+In [309]: foo
+Out[309]: 
+[array([5.1, 3.5, 1.4, 0.2, 0. ]),
+ array([4.9, 3. , 1.4, 0.2, 0. ]),
+ array([4.7, 3.2, 1.3, 0.2, 0. ]),
+ array([4.6, 3.1, 1.5, 0.2, 0. ]),
+ array([5. , 3.6, 1.4, 0.2, 0. ]),
+ array([5.4, 3.9, 1.7, 0.4, 0. ]),
+ array([4.6, 3.4, 1.4, 0.3, 0. ]),
+ array([5. , 3.4, 1.5, 0.2, 0. ]),
+ array([4.4, 2.9, 1.4, 0.2, 0. ]),
+ array([4.9, 3.1, 1.5, 0.1, 0. ]),
+ array([5.4, 3.7, 1.5, 0.2, 0. ]),
+ array([4.8, 3.4, 1.6, 0.2, 0. ]),
+ array([4.8, 3. , 1.4, 0.1, 0. ]),
+ array([4.3, 3. , 1.1, 0.1, 0. ]),
+ array([5.8, 4. , 1.2, 0.2, 0. ]),
+ array([5.7, 4.4, 1.5, 0.4, 0. ]),
+ array([5.4, 3.9, 1.3, 0.4, 0. ]),
+ array([5.1, 3.5, 1.4, 0.3, 0. ]),
+ array([5.7, 3.8, 1.7, 0.3, 0. ]),
+ array([5.1, 3.8, 1.5, 0.3, 0. ]),
+ array([5.4, 3.4, 1.7, 0.2, 0. ]),
+ array([5.1, 3.7, 1.5, 0.4, 0. ]),
+ array([4.6, 3.6, 1. , 0.2, 0. ]),
+ array([5.1, 3.3, 1.7, 0.5, 0. ]),
+ array([4.8, 3.4, 1.9, 0.2, 0. ]),
+ array([5. , 3. , 1.6, 0.2, 0. ]),
+ array([5. , 3.4, 1.6, 0.4, 0. ]),
+ array([5.2, 3.5, 1.5, 0.2, 0. ]),
+ array([5.2, 3.4, 1.4, 0.2, 0. ]),
+ array([4.7, 3.2, 1.6, 0.2, 0. ]),
+ array([4.8, 3.1, 1.6, 0.2, 0. ]),
+ array([5.4, 3.4, 1.5, 0.4, 0. ]),
+ array([5.2, 4.1, 1.5, 0.1, 0. ]),
+ array([5.5, 4.2, 1.4, 0.2, 0. ]),
+ array([4.9, 3.1, 1.5, 0.1, 0. ]),
+ array([5. , 3.2, 1.2, 0.2, 0. ]),
+ array([5.5, 3.5, 1.3, 0.2, 0. ]),
+ array([4.9, 3.1, 1.5, 0.1, 0. ]),
+ array([4.4, 3. , 1.3, 0.2, 0. ]),
+ array([5.1, 3.4, 1.5, 0.2, 0. ]),
+ array([5. , 3.5, 1.3, 0.3, 0. ]),
+ array([4.5, 2.3, 1.3, 0.3, 0. ]),
+ array([4.4, 3.2, 1.3, 0.2, 0. ]),
+ array([5. , 3.5, 1.6, 0.6, 0. ]),
+ array([5.1, 3.8, 1.9, 0.4, 0. ]),
+ array([4.8, 3. , 1.4, 0.3, 0. ]),
+ array([5.1, 3.8, 1.6, 0.2, 0. ]),
+ array([4.6, 3.2, 1.4, 0.2, 0. ]),
+ array([5.3, 3.7, 1.5, 0.2, 0. ]),
+ array([5. , 3.3, 1.4, 0.2, 0. ]),
+ array([7. , 3.2, 4.7, 1.4, 1. ]),
+ array([6.4, 3.2, 4.5, 1.5, 1. ]),
+ array([6.9, 3.1, 4.9, 1.5, 1. ]),
+ array([5.5, 2.3, 4. , 1.3, 1. ]),
+ array([6.5, 2.8, 4.6, 1.5, 1. ]),
+ array([5.7, 2.8, 4.5, 1.3, 1. ]),
+ array([6.3, 3.3, 4.7, 1.6, 1. ]),
+ array([4.9, 2.4, 3.3, 1. , 1. ]),
+ array([6.6, 2.9, 4.6, 1.3, 1. ]),
+ array([5.2, 2.7, 3.9, 1.4, 1. ]),
+ array([5. , 2. , 3.5, 1. , 1. ]),
+ array([5.9, 3. , 4.2, 1.5, 1. ]),
+ array([6. , 2.2, 4. , 1. , 1. ]),
+ array([6.1, 2.9, 4.7, 1.4, 1. ]),
+ array([5.6, 2.9, 3.6, 1.3, 1. ]),
+ array([6.7, 3.1, 4.4, 1.4, 1. ]),
+ array([5.6, 3. , 4.5, 1.5, 1. ]),
+ array([5.8, 2.7, 4.1, 1. , 1. ]),
+ array([6.2, 2.2, 4.5, 1.5, 1. ]),
+ array([5.6, 2.5, 3.9, 1.1, 1. ]),
+ array([5.9, 3.2, 4.8, 1.8, 1. ]),
+ array([6.1, 2.8, 4. , 1.3, 1. ]),
+ array([6.3, 2.5, 4.9, 1.5, 1. ]),
+ array([6.1, 2.8, 4.7, 1.2, 1. ]),
+ array([6.4, 2.9, 4.3, 1.3, 1. ]),
+ array([6.6, 3. , 4.4, 1.4, 1. ]),
+ array([6.8, 2.8, 4.8, 1.4, 1. ]),
+ array([6.7, 3. , 5. , 1.7, 1. ]),
+ array([6. , 2.9, 4.5, 1.5, 1. ]),
+ array([5.7, 2.6, 3.5, 1. , 1. ]),
+ array([5.5, 2.4, 3.8, 1.1, 1. ]),
+ array([5.5, 2.4, 3.7, 1. , 1. ]),
+ array([5.8, 2.7, 3.9, 1.2, 1. ]),
+ array([6. , 2.7, 5.1, 1.6, 1. ]),
+ array([5.4, 3. , 4.5, 1.5, 1. ]),
+ array([6. , 3.4, 4.5, 1.6, 1. ]),
+ array([6.7, 3.1, 4.7, 1.5, 1. ]),
+ array([6.3, 2.3, 4.4, 1.3, 1. ]),
+ array([5.6, 3. , 4.1, 1.3, 1. ]),
+ array([5.5, 2.5, 4. , 1.3, 1. ]),
+ array([5.5, 2.6, 4.4, 1.2, 1. ]),
+ array([6.1, 3. , 4.6, 1.4, 1. ]),
+ array([5.8, 2.6, 4. , 1.2, 1. ]),
+ array([5. , 2.3, 3.3, 1. , 1. ]),
+ array([5.6, 2.7, 4.2, 1.3, 1. ]),
+ array([5.7, 3. , 4.2, 1.2, 1. ]),
+ array([5.7, 2.9, 4.2, 1.3, 1. ]),
+ array([6.2, 2.9, 4.3, 1.3, 1. ]),
+ array([5.1, 2.5, 3. , 1.1, 1. ]),
+ array([5.7, 2.8, 4.1, 1.3, 1. ]),
+ array([6.3, 3.3, 6. , 2.5, 2. ]),
+ array([5.8, 2.7, 5.1, 1.9, 2. ]),
+ array([7.1, 3. , 5.9, 2.1, 2. ]),
+ array([6.3, 2.9, 5.6, 1.8, 2. ]),
+ array([6.5, 3. , 5.8, 2.2, 2. ]),
+ array([7.6, 3. , 6.6, 2.1, 2. ]),
+ array([4.9, 2.5, 4.5, 1.7, 2. ]),
+ array([7.3, 2.9, 6.3, 1.8, 2. ]),
+ array([6.7, 2.5, 5.8, 1.8, 2. ]),
+ array([7.2, 3.6, 6.1, 2.5, 2. ]),
+ array([6.5, 3.2, 5.1, 2. , 2. ]),
+ array([6.4, 2.7, 5.3, 1.9, 2. ]),
+ array([6.8, 3. , 5.5, 2.1, 2. ]),
+ array([5.7, 2.5, 5. , 2. , 2. ]),
+ array([5.8, 2.8, 5.1, 2.4, 2. ]),
+ array([6.4, 3.2, 5.3, 2.3, 2. ]),
+ array([6.5, 3. , 5.5, 1.8, 2. ]),
+ array([7.7, 3.8, 6.7, 2.2, 2. ]),
+ array([7.7, 2.6, 6.9, 2.3, 2. ]),
+ array([6. , 2.2, 5. , 1.5, 2. ]),
+ array([6.9, 3.2, 5.7, 2.3, 2. ]),
+ array([5.6, 2.8, 4.9, 2. , 2. ]),
+ array([7.7, 2.8, 6.7, 2. , 2. ]),
+ array([6.3, 2.7, 4.9, 1.8, 2. ]),
+ array([6.7, 3.3, 5.7, 2.1, 2. ]),
+ array([7.2, 3.2, 6. , 1.8, 2. ]),
+ array([6.2, 2.8, 4.8, 1.8, 2. ]),
+ array([6.1, 3. , 4.9, 1.8, 2. ]),
+ array([6.4, 2.8, 5.6, 2.1, 2. ]),
+ array([7.2, 3. , 5.8, 1.6, 2. ]),
+ array([7.4, 2.8, 6.1, 1.9, 2. ]),
+ array([7.9, 3.8, 6.4, 2. , 2. ]),
+ array([6.4, 2.8, 5.6, 2.2, 2. ]),
+ array([6.3, 2.8, 5.1, 1.5, 2. ]),
+ array([6.1, 2.6, 5.6, 1.4, 2. ]),
+ array([7.7, 3. , 6.1, 2.3, 2. ]),
+ array([6.3, 3.4, 5.6, 2.4, 2. ]),
+ array([6.4, 3.1, 5.5, 1.8, 2. ]),
+ array([6. , 3. , 4.8, 1.8, 2. ]),
+ array([6.9, 3.1, 5.4, 2.1, 2. ]),
+ array([6.7, 3.1, 5.6, 2.4, 2. ]),
+ array([6.9, 3.1, 5.1, 2.3, 2. ]),
+ array([5.8, 2.7, 5.1, 1.9, 2. ]),
+ array([6.8, 3.2, 5.9, 2.3, 2. ]),
+ array([6.7, 3.3, 5.7, 2.5, 2. ]),
+ array([6.7, 3. , 5.2, 2.3, 2. ]),
+ array([6.3, 2.5, 5. , 1.9, 2. ]),
+ array([6.5, 3. , 5.2, 2. , 2. ]),
+ array([6.2, 3.4, 5.4, 2.3, 2. ]),
+ array([5.9, 3. , 5.1, 1.8, 2. ])]
+
+In [310]: X = iris.data
+
+In [312]: X[:, :3]
+Out[312]: 
+array([[5.1, 3.5, 1.4],
+       [4.9, 3. , 1.4],
+       [4.7, 3.2, 1.3],
+       [4.6, 3.1, 1.5],
+       [5. , 3.6, 1.4],
+       [5.4, 3.9, 1.7],
+       [4.6, 3.4, 1.4],
+       [5. , 3.4, 1.5],
+       [4.4, 2.9, 1.4],
+       [4.9, 3.1, 1.5],
+       [5.4, 3.7, 1.5],
+       [4.8, 3.4, 1.6],
+       [4.8, 3. , 1.4],
+       [4.3, 3. , 1.1],
+       [5.8, 4. , 1.2],
+       [5.7, 4.4, 1.5],
+       [5.4, 3.9, 1.3],
+       [5.1, 3.5, 1.4],
+       [5.7, 3.8, 1.7],
+       [5.1, 3.8, 1.5],
+       [5.4, 3.4, 1.7],
+       [5.1, 3.7, 1.5],
+       [4.6, 3.6, 1. ],
+       [5.1, 3.3, 1.7],
+       [4.8, 3.4, 1.9],
+       [5. , 3. , 1.6],
+       [5. , 3.4, 1.6],
+       [5.2, 3.5, 1.5],
+       [5.2, 3.4, 1.4],
+       [4.7, 3.2, 1.6],
+       [4.8, 3.1, 1.6],
+       [5.4, 3.4, 1.5],
+       [5.2, 4.1, 1.5],
+       [5.5, 4.2, 1.4],
+       [4.9, 3.1, 1.5],
+       [5. , 3.2, 1.2],
+       [5.5, 3.5, 1.3],
+       [4.9, 3.1, 1.5],
+       [4.4, 3. , 1.3],
+       [5.1, 3.4, 1.5],
+       [5. , 3.5, 1.3],
+       [4.5, 2.3, 1.3],
+       [4.4, 3.2, 1.3],
+       [5. , 3.5, 1.6],
+       [5.1, 3.8, 1.9],
+       [4.8, 3. , 1.4],
+       [5.1, 3.8, 1.6],
+       [4.6, 3.2, 1.4],
+       [5.3, 3.7, 1.5],
+       [5. , 3.3, 1.4],
+       [7. , 3.2, 4.7],
+       [6.4, 3.2, 4.5],
+       [6.9, 3.1, 4.9],
+       [5.5, 2.3, 4. ],
+       [6.5, 2.8, 4.6],
+       [5.7, 2.8, 4.5],
+       [6.3, 3.3, 4.7],
+       [4.9, 2.4, 3.3],
+       [6.6, 2.9, 4.6],
+       [5.2, 2.7, 3.9],
+       [5. , 2. , 3.5],
+       [5.9, 3. , 4.2],
+       [6. , 2.2, 4. ],
+       [6.1, 2.9, 4.7],
+       [5.6, 2.9, 3.6],
+       [6.7, 3.1, 4.4],
+       [5.6, 3. , 4.5],
+       [5.8, 2.7, 4.1],
+       [6.2, 2.2, 4.5],
+       [5.6, 2.5, 3.9],
+       [5.9, 3.2, 4.8],
+       [6.1, 2.8, 4. ],
+       [6.3, 2.5, 4.9],
+       [6.1, 2.8, 4.7],
+       [6.4, 2.9, 4.3],
+       [6.6, 3. , 4.4],
+       [6.8, 2.8, 4.8],
+       [6.7, 3. , 5. ],
+       [6. , 2.9, 4.5],
+       [5.7, 2.6, 3.5],
+       [5.5, 2.4, 3.8],
+       [5.5, 2.4, 3.7],
+       [5.8, 2.7, 3.9],
+       [6. , 2.7, 5.1],
+       [5.4, 3. , 4.5],
+       [6. , 3.4, 4.5],
+       [6.7, 3.1, 4.7],
+       [6.3, 2.3, 4.4],
+       [5.6, 3. , 4.1],
+       [5.5, 2.5, 4. ],
+       [5.5, 2.6, 4.4],
+       [6.1, 3. , 4.6],
+       [5.8, 2.6, 4. ],
+       [5. , 2.3, 3.3],
+       [5.6, 2.7, 4.2],
+       [5.7, 3. , 4.2],
+       [5.7, 2.9, 4.2],
+       [6.2, 2.9, 4.3],
+       [5.1, 2.5, 3. ],
+       [5.7, 2.8, 4.1],
+       [6.3, 3.3, 6. ],
+       [5.8, 2.7, 5.1],
+       [7.1, 3. , 5.9],
+       [6.3, 2.9, 5.6],
+       [6.5, 3. , 5.8],
+       [7.6, 3. , 6.6],
+       [4.9, 2.5, 4.5],
+       [7.3, 2.9, 6.3],
+       [6.7, 2.5, 5.8],
+       [7.2, 3.6, 6.1],
+       [6.5, 3.2, 5.1],
+       [6.4, 2.7, 5.3],
+       [6.8, 3. , 5.5],
+       [5.7, 2.5, 5. ],
+       [5.8, 2.8, 5.1],
+       [6.4, 3.2, 5.3],
+       [6.5, 3. , 5.5],
+       [7.7, 3.8, 6.7],
+       [7.7, 2.6, 6.9],
+       [6. , 2.2, 5. ],
+       [6.9, 3.2, 5.7],
+       [5.6, 2.8, 4.9],
+       [7.7, 2.8, 6.7],
+       [6.3, 2.7, 4.9],
+       [6.7, 3.3, 5.7],
+       [7.2, 3.2, 6. ],
+       [6.2, 2.8, 4.8],
+       [6.1, 3. , 4.9],
+       [6.4, 2.8, 5.6],
+       [7.2, 3. , 5.8],
+       [7.4, 2.8, 6.1],
+       [7.9, 3.8, 6.4],
+       [6.4, 2.8, 5.6],
+       [6.3, 2.8, 5.1],
+       [6.1, 2.6, 5.6],
+       [7.7, 3. , 6.1],
+       [6.3, 3.4, 5.6],
+       [6.4, 3.1, 5.5],
+       [6. , 3. , 4.8],
+       [6.9, 3.1, 5.4],
+       [6.7, 3.1, 5.6],
+       [6.9, 3.1, 5.1],
+       [5.8, 2.7, 5.1],
+       [6.8, 3.2, 5.9],
+       [6.7, 3.3, 5.7],
+       [6.7, 3. , 5.2],
+       [6.3, 2.5, 5. ],
+       [6.5, 3. , 5.2],
+       [6.2, 3.4, 5.4],
+       [5.9, 3. , 5.1]])
+
+In [313]: X[:, :2]
+Out[313]: 
+array([[5.1, 3.5],
+       [4.9, 3. ],
+       [4.7, 3.2],
+       [4.6, 3.1],
+       [5. , 3.6],
+       [5.4, 3.9],
+       [4.6, 3.4],
+       [5. , 3.4],
+       [4.4, 2.9],
+       [4.9, 3.1],
+       [5.4, 3.7],
+       [4.8, 3.4],
+       [4.8, 3. ],
+       [4.3, 3. ],
+       [5.8, 4. ],
+       [5.7, 4.4],
+       [5.4, 3.9],
+       [5.1, 3.5],
+       [5.7, 3.8],
+       [5.1, 3.8],
+       [5.4, 3.4],
+       [5.1, 3.7],
+       [4.6, 3.6],
+       [5.1, 3.3],
+       [4.8, 3.4],
+       [5. , 3. ],
+       [5. , 3.4],
+       [5.2, 3.5],
+       [5.2, 3.4],
+       [4.7, 3.2],
+       [4.8, 3.1],
+       [5.4, 3.4],
+       [5.2, 4.1],
+       [5.5, 4.2],
+       [4.9, 3.1],
+       [5. , 3.2],
+       [5.5, 3.5],
+       [4.9, 3.1],
+       [4.4, 3. ],
+       [5.1, 3.4],
+       [5. , 3.5],
+       [4.5, 2.3],
+       [4.4, 3.2],
+       [5. , 3.5],
+       [5.1, 3.8],
+       [4.8, 3. ],
+       [5.1, 3.8],
+       [4.6, 3.2],
+       [5.3, 3.7],
+       [5. , 3.3],
+       [7. , 3.2],
+       [6.4, 3.2],
+       [6.9, 3.1],
+       [5.5, 2.3],
+       [6.5, 2.8],
+       [5.7, 2.8],
+       [6.3, 3.3],
+       [4.9, 2.4],
+       [6.6, 2.9],
+       [5.2, 2.7],
+       [5. , 2. ],
+       [5.9, 3. ],
+       [6. , 2.2],
+       [6.1, 2.9],
+       [5.6, 2.9],
+       [6.7, 3.1],
+       [5.6, 3. ],
+       [5.8, 2.7],
+       [6.2, 2.2],
+       [5.6, 2.5],
+       [5.9, 3.2],
+       [6.1, 2.8],
+       [6.3, 2.5],
+       [6.1, 2.8],
+       [6.4, 2.9],
+       [6.6, 3. ],
+       [6.8, 2.8],
+       [6.7, 3. ],
+       [6. , 2.9],
+       [5.7, 2.6],
+       [5.5, 2.4],
+       [5.5, 2.4],
+       [5.8, 2.7],
+       [6. , 2.7],
+       [5.4, 3. ],
+       [6. , 3.4],
+       [6.7, 3.1],
+       [6.3, 2.3],
+       [5.6, 3. ],
+       [5.5, 2.5],
+       [5.5, 2.6],
+       [6.1, 3. ],
+       [5.8, 2.6],
+       [5. , 2.3],
+       [5.6, 2.7],
+       [5.7, 3. ],
+       [5.7, 2.9],
+       [6.2, 2.9],
+       [5.1, 2.5],
+       [5.7, 2.8],
+       [6.3, 3.3],
+       [5.8, 2.7],
+       [7.1, 3. ],
+       [6.3, 2.9],
+       [6.5, 3. ],
+       [7.6, 3. ],
+       [4.9, 2.5],
+       [7.3, 2.9],
+       [6.7, 2.5],
+       [7.2, 3.6],
+       [6.5, 3.2],
+       [6.4, 2.7],
+       [6.8, 3. ],
+       [5.7, 2.5],
+       [5.8, 2.8],
+       [6.4, 3.2],
+       [6.5, 3. ],
+       [7.7, 3.8],
+       [7.7, 2.6],
+       [6. , 2.2],
+       [6.9, 3.2],
+       [5.6, 2.8],
+       [7.7, 2.8],
+       [6.3, 2.7],
+       [6.7, 3.3],
+       [7.2, 3.2],
+       [6.2, 2.8],
+       [6.1, 3. ],
+       [6.4, 2.8],
+       [7.2, 3. ],
+       [7.4, 2.8],
+       [7.9, 3.8],
+       [6.4, 2.8],
+       [6.3, 2.8],
+       [6.1, 2.6],
+       [7.7, 3. ],
+       [6.3, 3.4],
+       [6.4, 3.1],
+       [6. , 3. ],
+       [6.9, 3.1],
+       [6.7, 3.1],
+       [6.9, 3.1],
+       [5.8, 2.7],
+       [6.8, 3.2],
+       [6.7, 3.3],
+       [6.7, 3. ],
+       [6.3, 2.5],
+       [6.5, 3. ],
+       [6.2, 3.4],
+       [5.9, 3. ]])
+
+In [314]: X[:, 2:]
+Out[314]: 
+array([[1.4, 0.2],
+       [1.4, 0.2],
+       [1.3, 0.2],
+       [1.5, 0.2],
+       [1.4, 0.2],
+       [1.7, 0.4],
+       [1.4, 0.3],
+       [1.5, 0.2],
+       [1.4, 0.2],
+       [1.5, 0.1],
+       [1.5, 0.2],
+       [1.6, 0.2],
+       [1.4, 0.1],
+       [1.1, 0.1],
+       [1.2, 0.2],
+       [1.5, 0.4],
+       [1.3, 0.4],
+       [1.4, 0.3],
+       [1.7, 0.3],
+       [1.5, 0.3],
+       [1.7, 0.2],
+       [1.5, 0.4],
+       [1. , 0.2],
+       [1.7, 0.5],
+       [1.9, 0.2],
+       [1.6, 0.2],
+       [1.6, 0.4],
+       [1.5, 0.2],
+       [1.4, 0.2],
+       [1.6, 0.2],
+       [1.6, 0.2],
+       [1.5, 0.4],
+       [1.5, 0.1],
+       [1.4, 0.2],
+       [1.5, 0.1],
+       [1.2, 0.2],
+       [1.3, 0.2],
+       [1.5, 0.1],
+       [1.3, 0.2],
+       [1.5, 0.2],
+       [1.3, 0.3],
+       [1.3, 0.3],
+       [1.3, 0.2],
+       [1.6, 0.6],
+       [1.9, 0.4],
+       [1.4, 0.3],
+       [1.6, 0.2],
+       [1.4, 0.2],
+       [1.5, 0.2],
+       [1.4, 0.2],
+       [4.7, 1.4],
+       [4.5, 1.5],
+       [4.9, 1.5],
+       [4. , 1.3],
+       [4.6, 1.5],
+       [4.5, 1.3],
+       [4.7, 1.6],
+       [3.3, 1. ],
+       [4.6, 1.3],
+       [3.9, 1.4],
+       [3.5, 1. ],
+       [4.2, 1.5],
+       [4. , 1. ],
+       [4.7, 1.4],
+       [3.6, 1.3],
+       [4.4, 1.4],
+       [4.5, 1.5],
+       [4.1, 1. ],
+       [4.5, 1.5],
+       [3.9, 1.1],
+       [4.8, 1.8],
+       [4. , 1.3],
+       [4.9, 1.5],
+       [4.7, 1.2],
+       [4.3, 1.3],
+       [4.4, 1.4],
+       [4.8, 1.4],
+       [5. , 1.7],
+       [4.5, 1.5],
+       [3.5, 1. ],
+       [3.8, 1.1],
+       [3.7, 1. ],
+       [3.9, 1.2],
+       [5.1, 1.6],
+       [4.5, 1.5],
+       [4.5, 1.6],
+       [4.7, 1.5],
+       [4.4, 1.3],
+       [4.1, 1.3],
+       [4. , 1.3],
+       [4.4, 1.2],
+       [4.6, 1.4],
+       [4. , 1.2],
+       [3.3, 1. ],
+       [4.2, 1.3],
+       [4.2, 1.2],
+       [4.2, 1.3],
+       [4.3, 1.3],
+       [3. , 1.1],
+       [4.1, 1.3],
+       [6. , 2.5],
+       [5.1, 1.9],
+       [5.9, 2.1],
+       [5.6, 1.8],
+       [5.8, 2.2],
+       [6.6, 2.1],
+       [4.5, 1.7],
+       [6.3, 1.8],
+       [5.8, 1.8],
+       [6.1, 2.5],
+       [5.1, 2. ],
+       [5.3, 1.9],
+       [5.5, 2.1],
+       [5. , 2. ],
+       [5.1, 2.4],
+       [5.3, 2.3],
+       [5.5, 1.8],
+       [6.7, 2.2],
+       [6.9, 2.3],
+       [5. , 1.5],
+       [5.7, 2.3],
+       [4.9, 2. ],
+       [6.7, 2. ],
+       [4.9, 1.8],
+       [5.7, 2.1],
+       [6. , 1.8],
+       [4.8, 1.8],
+       [4.9, 1.8],
+       [5.6, 2.1],
+       [5.8, 1.6],
+       [6.1, 1.9],
+       [6.4, 2. ],
+       [5.6, 2.2],
+       [5.1, 1.5],
+       [5.6, 1.4],
+       [6.1, 2.3],
+       [5.6, 2.4],
+       [5.5, 1.8],
+       [4.8, 1.8],
+       [5.4, 2.1],
+       [5.6, 2.4],
+       [5.1, 2.3],
+       [5.1, 1.9],
+       [5.9, 2.3],
+       [5.7, 2.5],
+       [5.2, 2.3],
+       [5. , 1.9],
+       [5.2, 2. ],
+       [5.4, 2.3],
+       [5.1, 1.8]])
+
+In [315]: X[:10, 2:]
+Out[318]: 
+array([[1.4, 0.2],
+       [1.4, 0.2],
+       [1.3, 0.2],
+       [1.5, 0.2],
+       [1.4, 0.2],
+       [1.7, 0.4],
+       [1.4, 0.3],
+       [1.5, 0.2],
+       [1.4, 0.2],
+       [1.5, 0.1]])
+
+In [319]: len(Out[318])
+Out[319]: 10
+
+In [320]: X[:10, 0:4:2]
+Out[332]: 
+array([[5.1, 1.4],
+       [4.9, 1.4],
+       [4.7, 1.3],
+       [4.6, 1.5],
+       [5. , 1.4],
+       [5.4, 1.7],
+       [4.6, 1.4],
+       [5. , 1.5],
+       [4.4, 1.4],
+       [4.9, 1.5]])
+
+In [333]: X[:10, :]
+Out[333]: 
+array([[5.1, 3.5, 1.4, 0.2],
+       [4.9, 3. , 1.4, 0.2],
+       [4.7, 3.2, 1.3, 0.2],
+       [4.6, 3.1, 1.5, 0.2],
+       [5. , 3.6, 1.4, 0.2],
+       [5.4, 3.9, 1.7, 0.4],
+       [4.6, 3.4, 1.4, 0.3],
+       [5. , 3.4, 1.5, 0.2],
+       [4.4, 2.9, 1.4, 0.2],
+       [4.9, 3.1, 1.5, 0.1]])
+
+In [334]: X[:10, 0:4:3]
+Out[334]: 
+array([[5.1, 0.2],
+       [4.9, 0.2],
+       [4.7, 0.2],
+       [4.6, 0.2],
+       [5. , 0.2],
+       [5.4, 0.4],
+       [4.6, 0.3],
+       [5. , 0.2],
+       [4.4, 0.2],
+       [4.9, 0.1]])
+
+In [335]: X[-1]
+Out[335]: array([5.9, 3. , 5.1, 1.8])
+
+In [336]: X[:10, 1:4:3]
+Out[336]: 
+array([[3.5],
+       [3. ],
+       [3.2],
+       [3.1],
+       [3.6],
+       [3.9],
+       [3.4],
+       [3.4],
+       [2.9],
+       [3.1]])
+
+
+In [338]: X[:, x >= 3]
+Out[338]: 
+array([[5.1, 3.5, 1.4],
+       [4.9, 3. , 1.4],
+       [4.7, 3.2, 1.3],
+       [4.6, 3.1, 1.5],
+       [5. , 3.6, 1.4],
+       [5.4, 3.9, 1.7],
+       [4.6, 3.4, 1.4],
+       [5. , 3.4, 1.5],
+       [4.4, 2.9, 1.4],
+       [4.9, 3.1, 1.5],
+       [5.4, 3.7, 1.5],
+       [4.8, 3.4, 1.6],
+       [4.8, 3. , 1.4],
+       [4.3, 3. , 1.1],
+       [5.8, 4. , 1.2],
+       [5.7, 4.4, 1.5],
+       [5.4, 3.9, 1.3],
+       [5.1, 3.5, 1.4],
+       [5.7, 3.8, 1.7],
+       [5.1, 3.8, 1.5],
+       [5.4, 3.4, 1.7],
+       [5.1, 3.7, 1.5],
+       [4.6, 3.6, 1. ],
+       [5.1, 3.3, 1.7],
+       [4.8, 3.4, 1.9],
+       [5. , 3. , 1.6],
+       [5. , 3.4, 1.6],
+       [5.2, 3.5, 1.5],
+       [5.2, 3.4, 1.4],
+       [4.7, 3.2, 1.6],
+       [4.8, 3.1, 1.6],
+       [5.4, 3.4, 1.5],
+       [5.2, 4.1, 1.5],
+       [5.5, 4.2, 1.4],
+       [4.9, 3.1, 1.5],
+       [5. , 3.2, 1.2],
+       [5.5, 3.5, 1.3],
+       [4.9, 3.1, 1.5],
+       [4.4, 3. , 1.3],
+       [5.1, 3.4, 1.5],
+       [5. , 3.5, 1.3],
+       [4.5, 2.3, 1.3],
+       [4.4, 3.2, 1.3],
+       [5. , 3.5, 1.6],
+       [5.1, 3.8, 1.9],
+       [4.8, 3. , 1.4],
+       [5.1, 3.8, 1.6],
+       [4.6, 3.2, 1.4],
+       [5.3, 3.7, 1.5],
+       [5. , 3.3, 1.4],
+       [7. , 3.2, 4.7],
+       [6.4, 3.2, 4.5],
+       [6.9, 3.1, 4.9],
+       [5.5, 2.3, 4. ],
+       [6.5, 2.8, 4.6],
+       [5.7, 2.8, 4.5],
+       [6.3, 3.3, 4.7],
+       [4.9, 2.4, 3.3],
+       [6.6, 2.9, 4.6],
+       [5.2, 2.7, 3.9],
+       [5. , 2. , 3.5],
+       [5.9, 3. , 4.2],
+       [6. , 2.2, 4. ],
+       [6.1, 2.9, 4.7],
+       [5.6, 2.9, 3.6],
+       [6.7, 3.1, 4.4],
+       [5.6, 3. , 4.5],
+       [5.8, 2.7, 4.1],
+       [6.2, 2.2, 4.5],
+       [5.6, 2.5, 3.9],
+       [5.9, 3.2, 4.8],
+       [6.1, 2.8, 4. ],
+       [6.3, 2.5, 4.9],
+       [6.1, 2.8, 4.7],
+       [6.4, 2.9, 4.3],
+       [6.6, 3. , 4.4],
+       [6.8, 2.8, 4.8],
+       [6.7, 3. , 5. ],
+       [6. , 2.9, 4.5],
+       [5.7, 2.6, 3.5],
+       [5.5, 2.4, 3.8],
+       [5.5, 2.4, 3.7],
+       [5.8, 2.7, 3.9],
+       [6. , 2.7, 5.1],
+       [5.4, 3. , 4.5],
+       [6. , 3.4, 4.5],
+       [6.7, 3.1, 4.7],
+       [6.3, 2.3, 4.4],
+       [5.6, 3. , 4.1],
+       [5.5, 2.5, 4. ],
+       [5.5, 2.6, 4.4],
+       [6.1, 3. , 4.6],
+       [5.8, 2.6, 4. ],
+       [5. , 2.3, 3.3],
+       [5.6, 2.7, 4.2],
+       [5.7, 3. , 4.2],
+       [5.7, 2.9, 4.2],
+       [6.2, 2.9, 4.3],
+       [5.1, 2.5, 3. ],
+       [5.7, 2.8, 4.1],
+       [6.3, 3.3, 6. ],
+       [5.8, 2.7, 5.1],
+       [7.1, 3. , 5.9],
+       [6.3, 2.9, 5.6],
+       [6.5, 3. , 5.8],
+       [7.6, 3. , 6.6],
+       [4.9, 2.5, 4.5],
+       [7.3, 2.9, 6.3],
+       [6.7, 2.5, 5.8],
+       [7.2, 3.6, 6.1],
+       [6.5, 3.2, 5.1],
+       [6.4, 2.7, 5.3],
+       [6.8, 3. , 5.5],
+       [5.7, 2.5, 5. ],
+       [5.8, 2.8, 5.1],
+       [6.4, 3.2, 5.3],
+       [6.5, 3. , 5.5],
+       [7.7, 3.8, 6.7],
+       [7.7, 2.6, 6.9],
+       [6. , 2.2, 5. ],
+       [6.9, 3.2, 5.7],
+       [5.6, 2.8, 4.9],
+       [7.7, 2.8, 6.7],
+       [6.3, 2.7, 4.9],
+       [6.7, 3.3, 5.7],
+       [7.2, 3.2, 6. ],
+       [6.2, 2.8, 4.8],
+       [6.1, 3. , 4.9],
+       [6.4, 2.8, 5.6],
+       [7.2, 3. , 5.8],
+       [7.4, 2.8, 6.1],
+       [7.9, 3.8, 6.4],
+       [6.4, 2.8, 5.6],
+       [6.3, 2.8, 5.1],
+       [6.1, 2.6, 5.6],
+       [7.7, 3. , 6.1],
+       [6.3, 3.4, 5.6],
+       [6.4, 3.1, 5.5],
+       [6. , 3. , 4.8],
+       [6.9, 3.1, 5.4],
+       [6.7, 3.1, 5.6],
+       [6.9, 3.1, 5.1],
+       [5.8, 2.7, 5.1],
+       [6.8, 3.2, 5.9],
+       [6.7, 3.3, 5.7],
+       [6.7, 3. , 5.2],
+       [6.3, 2.5, 5. ],
+       [6.5, 3. , 5.2],
+       [6.2, 3.4, 5.4],
+       [5.9, 3. , 5.1]])
+
+In [339]: 
+Process Python finished
