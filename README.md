@@ -10,11 +10,12 @@ All materials (presentations and tutorials) from AI Saturdays - Boise Chapter, o
 - [AI6 forum](https://ai6forums.nurture.ai/t/ai-saturdays-ai6-boise/668)
 - [AI Saturdays (nurture.ai) Slack Group](https://aisaturdays.slack.com/)
 
-<h3><a href="https://github.com/aidevelopersboise/workshop-image-gallery/tree/master/imgs" target="_blank">Workshop Image Gallery</a></h3>>
+<h3><a href="https://github.com/aidevelopersboise/workshop-image-gallery/tree/master/imgs" target="_blank">Workshop Image Gallery</a></h3>
 
 
 # Study and Learning Resources
 
+- Week 0 (March 5, 2018) - AI6 Orientation
 - [Week 1 (March 12, 2018)](week1) [[old link](https://github.com/aidevelopersboise/aidevelopersboise-ai6-week1)] [[Preliminary Readings](https://docs.google.com/document/d/1jMcvpPM5a2NV-fWrqwHgdjxeB2UUSkDdvpWSUhGhI7s/edit?usp=sharing)]
     - Python, Installation and Environment Setup
     - Introduction to Python
