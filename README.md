@@ -40,10 +40,11 @@ All materials (presentations and tutorials) from AI Saturdays - Boise Chapter, o
     - Introduction to Support Vector Machines
     - Simple plots to get a glimpse of Loss Function in Logistic Regression
     - Demonstration (muffins vs cupcake classification using SVM)
-- [Week 6 (June 30, 2018)](week6)[Preliminary Study: [CS221n Chapter 2](https://www.youtube.com/watch?v=OoUX-nOEjG0), [CS221n Chapter 3](https://www.youtube.com/watch?v=h7iBpEHGVNc&index=3&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv)] <-- [We're here!]
+- [Week 6 (June 30, 2018)](week6)[Preliminary Study: [CS221n Chapter 2](https://www.youtube.com/watch?v=OoUX-nOEjG0), [CS221n Chapter 3](https://www.youtube.com/watch?v=h7iBpEHGVNc&index=3&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv)]
     - [Chapter 4](https://www.youtube.com/watch?v=d14TUNcbn1k&index=4&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv) - Introduction to Neural Networks
     - [Chapter 5](https://www.youtube.com/watch?v=bNb2fEVKeEo&index=5&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv) - Convolutional Neural Networks (CNNs)
-- [Week 7 (July 7, 2018)](week7)[[Preliminary Readings](https://www.youtube.com/playlist?list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv)]
+    - Notes on lecture 2 and simple code implementation of K-NN algorithm 
+- [Week 7 (July 7, 2018)](week7)[[Preliminary Readings](https://www.youtube.com/playlist?list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv)] <-- [We're here!]
     - [Chapter 6](https://www.youtube.com/watch?v=wEoyxE0GP2M&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv&index=6), [Chapter 7](https://www.youtube.com/watch?v=_JB0AO7QxSA&index=7&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv) - Training Neural Networks
 - [Week 8 (July 14, 2018)](week8)[[Preliminary Readings](https://www.youtube.com/playlist?list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv)]
     - [Chapter 9](https://www.youtube.com/watch?v=DAOcjicFr1Y&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv&index=9) - Convolutional Neural Networks Architectures (Alexnet, Googlenet, VGGNet, etc.)
